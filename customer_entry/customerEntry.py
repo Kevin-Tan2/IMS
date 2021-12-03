@@ -75,11 +75,27 @@ class CustomerEntry(QtWidgets.QMainWindow):
             self.customerIDTable.hideColumn(column_hidden)  # hide other columns except Customer ID and Name
 
         # event responses
+        self.resetButton.clicked.connect(self.reset_entries)
         self.saveButton.clicked.connect(self.save_csv)
         self.addButton.clicked.connect(self.add_df)
         self.deleteButton.clicked.connect(self.delete_row)
         self.closeButton.clicked.connect(self.close)
         self.searchBar.textChanged.connect(self.search_query)
+
+    def reset_entries(self):
+        # clears the line entries
+        self.inputCustomerID.clear()
+        self.inputCustomerNo.clear()
+        self.inputName.clear()
+        self.inputAddrOne.clear()
+        self.inputAddrTwo.clear()
+        self.inputAddrThree.clear()
+        self.inputAddrFour.clear()
+        self.inputTelephone.clear()
+        self.inputGST.clear()
+        self.inputFax.clear()
+        self.inputAccountNo.clear()
+
 
     def search_query(self):
         # to filter out data that does not match with the search bar
