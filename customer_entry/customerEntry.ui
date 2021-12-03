@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>889</width>
-    <height>666</height>
+    <width>1016</width>
+    <height>718</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <widget class="QFrame" name="customersFrame1">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>660</x>
       <y>10</y>
-      <width>241</width>
+      <width>391</width>
       <height>71</height>
      </rect>
     </property>
@@ -33,10 +33,15 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>10</y>
-       <width>111</width>
-       <height>16</height>
+       <y>0</y>
+       <width>131</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Customer ID:</string>
@@ -46,10 +51,15 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>40</y>
-       <width>91</width>
-       <height>16</height>
+       <y>35</y>
+       <width>131</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Customer No:</string>
@@ -58,7 +68,7 @@
     <widget class="QLineEdit" name="inputCustomerID">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>150</x>
        <y>10</y>
        <width>113</width>
        <height>22</height>
@@ -68,7 +78,7 @@
     <widget class="QLineEdit" name="inputCustomerNo">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>150</x>
        <y>40</y>
        <width>113</width>
        <height>22</height>
@@ -79,9 +89,9 @@
    <widget class="QFrame" name="customersFrame2">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>601</width>
+      <x>20</x>
+      <y>20</y>
+      <width>651</width>
       <height>261</height>
      </rect>
     </property>
@@ -95,10 +105,20 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>20</y>
-       <width>101</width>
-       <height>16</height>
+       <y>10</y>
+       <width>171</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Customer Type: </string>
@@ -108,10 +128,18 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>50</y>
-       <width>111</width>
-       <height>16</height>
+       <y>40</y>
+       <width>151</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Customer Name:</string>
@@ -121,10 +149,15 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>80</y>
-       <width>121</width>
-       <height>16</height>
+       <y>70</y>
+       <width>191</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Customer Address1:</string>
@@ -134,10 +167,15 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>110</y>
-       <width>121</width>
-       <height>16</height>
+       <y>100</y>
+       <width>181</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Customer Address2:</string>
@@ -147,10 +185,15 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>140</y>
-       <width>121</width>
-       <height>16</height>
+       <y>130</y>
+       <width>181</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Customer Address3:</string>
@@ -160,10 +203,15 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>170</y>
-       <width>121</width>
-       <height>16</height>
+       <y>160</y>
+       <width>181</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Customer Address4:</string>
@@ -173,10 +221,15 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>200</y>
-       <width>55</width>
-       <height>16</height>
+       <y>190</y>
+       <width>71</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Tel No:</string>
@@ -186,10 +239,15 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>230</y>
-       <width>101</width>
-       <height>16</height>
+       <y>220</y>
+       <width>121</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>GST Reg No:</string>
@@ -198,11 +256,16 @@
     <widget class="QLabel" name="faxNoLabel">
      <property name="geometry">
       <rect>
-       <x>380</x>
+       <x>400</x>
        <y>200</y>
-       <width>55</width>
+       <width>81</width>
        <height>16</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Fax No:</string>
@@ -211,11 +274,16 @@
     <widget class="QLabel" name="accountNoLabel">
      <property name="geometry">
       <rect>
-       <x>380</x>
+       <x>400</x>
        <y>230</y>
-       <width>71</width>
+       <width>121</width>
        <height>16</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Account No:</string>
@@ -224,101 +292,151 @@
     <widget class="QComboBox" name="customerTypeDropBox">
      <property name="geometry">
       <rect>
-       <x>150</x>
+       <x>210</x>
        <y>20</y>
        <width>151</width>
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
     </widget>
     <widget class="QLineEdit" name="inputName">
      <property name="geometry">
       <rect>
-       <x>150</x>
+       <x>210</x>
        <y>50</y>
        <width>421</width>
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
     </widget>
     <widget class="QLineEdit" name="inputAddrOne">
      <property name="geometry">
       <rect>
-       <x>150</x>
+       <x>210</x>
        <y>80</y>
        <width>421</width>
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
     </widget>
     <widget class="QLineEdit" name="inputAddrTwo">
      <property name="geometry">
       <rect>
-       <x>150</x>
+       <x>210</x>
        <y>110</y>
        <width>421</width>
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
     </widget>
     <widget class="QLineEdit" name="inputAddrThree">
      <property name="geometry">
       <rect>
-       <x>150</x>
+       <x>210</x>
        <y>140</y>
        <width>421</width>
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
     </widget>
     <widget class="QLineEdit" name="inputAddrFour">
      <property name="geometry">
       <rect>
-       <x>150</x>
+       <x>210</x>
        <y>170</y>
        <width>421</width>
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
     </widget>
     <widget class="QLineEdit" name="inputTelephone">
      <property name="geometry">
       <rect>
-       <x>150</x>
+       <x>210</x>
        <y>200</y>
        <width>171</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
     </widget>
     <widget class="QLineEdit" name="inputGST">
      <property name="geometry">
       <rect>
-       <x>150</x>
+       <x>210</x>
        <y>230</y>
        <width>171</width>
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
     </widget>
     <widget class="QLineEdit" name="inputFax">
      <property name="geometry">
       <rect>
-       <x>460</x>
+       <x>520</x>
        <y>200</y>
        <width>113</width>
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
     </widget>
     <widget class="QLineEdit" name="inputAccountNo">
      <property name="geometry">
       <rect>
-       <x>460</x>
+       <x>520</x>
        <y>230</y>
        <width>113</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
     </widget>
    </widget>
@@ -349,6 +467,11 @@
        <height>28</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="text">
       <string>Reset</string>
      </property>
@@ -361,6 +484,11 @@
        <width>93</width>
        <height>28</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Delete</string>
@@ -375,6 +503,11 @@
        <height>28</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="text">
       <string>Add</string>
      </property>
@@ -387,6 +520,11 @@
        <width>93</width>
        <height>28</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Print</string>
@@ -401,6 +539,11 @@
        <height>28</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="text">
       <string>Save</string>
      </property>
@@ -413,6 +556,11 @@
        <width>93</width>
        <height>28</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Close</string>
@@ -494,7 +642,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>889</width>
+     <width>1016</width>
      <height>26</height>
     </rect>
    </property>
