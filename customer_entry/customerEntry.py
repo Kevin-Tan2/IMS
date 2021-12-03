@@ -96,6 +96,7 @@ class CustomerEntry(QtWidgets.QMainWindow):
         # construct a new data frame from the QLineEdits
         customerID = str(self.inputCustomerID.text())
         customerName = str(self.inputName.text())
+        customerType = str(self.customerTypeDropBox.currentText())
         addr1 = str(self.inputAddrOne.text())
         addr2 = str(self.inputAddrTwo.text())
         addr3 = str(self.inputAddrThree.text())
@@ -106,6 +107,7 @@ class CustomerEntry(QtWidgets.QMainWindow):
         accountNo = str(self.inputAccountNo.text())
         df = pd.DataFrame({'Customer ID': [customerID],
                            'Customer Name': [customerName],
+                           'Customer Type': [customerType],
                            'Addr1': [addr1],
                            'Addr2': [addr2],
                            'Addr3': [addr3],
