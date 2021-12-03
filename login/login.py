@@ -8,9 +8,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import pandas as pd
 
-
-class Ui_Login(object):
+class LoginWindow(object):
     def setupUi(self, Login):
         Login.setObjectName("Login")
         Login.resize(351, 263)
@@ -46,7 +46,7 @@ class Ui_Login(object):
         self.inputPassword.setGeometry(QtCore.QRect(90, 60, 111, 22))
         self.inputPassword.setStyleSheet("background-color: rgb(255, 255, 255);color: rgb(0, 0, 0);")
         self.inputPassword.setObjectName("inputPassword")
-        self.inputPassword.setEchoMode(QtWidgets.QLineEdit.Password)    # hide the password
+        self.inputPassword.setEchoMode(QtWidgets.QLineEdit.Password)  # hide the password
 
         # username label
         self.usernameLabel = QtWidgets.QLabel(self.inputFrame)
@@ -79,21 +79,40 @@ class Ui_Login(object):
         # create a message box to inform the user if the login succeed or failed
         msg = QtWidgets.QMessageBox()
 
-        if self.inputUsername.text() == 'admin' and self.inputPassword.text() == 'password':
-            msg.setText('Success')
-            msg.exec_()
-            app.quit()
+        try:
+            # open the csv file consists of usernames and their password
+            df = pd.read_csv("listUsers.csv")
 
-        else:
-            msg.setText('Incorrect Password')
+            # get the column position of Password
+            passCol = df.columns.get_loc("Password")
+
+            # get the column position of username
+            userCol = df.columns.get_loc("Username")
+
+            # get the row position of the specific username
+            row = df.loc[df["Username"] == self.inputUsername.text()].index[0]
+
+            # check if there are any existing username and their matching password
+            if self.inputUsername.text() == str(df.iloc[row, userCol]) and self.inputPassword.text() == str(
+                    df.iloc[row, passCol]):
+                msg.setText("Success")
+                msg.exec_()
+                app.quit()
+
+            else:
+                msg.setText("Incorrect Username or Password")
+                msg.exec_()
+        except:
+            msg.setText("This username does not exist")
             msg.exec_()
 
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     Login = QtWidgets.QMainWindow()
-    ui = Ui_Login()
+    ui = LoginWindow()
     ui.setupUi(Login)
     Login.show()
     sys.exit(app.exec_())
