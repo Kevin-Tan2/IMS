@@ -32,16 +32,13 @@ class tableModel(QAbstractTableModel):
         return None
 
 
-def load_csv(fileName):
+def load_csv(fileName, columnNames):
     # check if the .csv file exist
     filePath = Path("./" + fileName)
 
     if not filePath.exists():
         # if the file path does not exist then create new empty dataframe and save it
-        columnNames = ['Customer ID', 'Customer Name', 'Addr1', 'Addr2', 'Addr3', 'Addr4',
-                       'Tel No', 'GST Reg', 'Fax No', 'Account No']
         df = pd.DataFrame(columns=columnNames)
-        df.to_csv(fileName, index=False)
 
     else:
         df = pd.read_csv(fileName)
@@ -53,8 +50,13 @@ class CustomerEntry(QtWidgets.QMainWindow):
     def __init__(self):
         super(CustomerEntry, self).__init__()
 
-        loadUi("customerEntry.ui", self)  # load the ui file
-        self._df = load_csv("customerList.csv")
+        # load the ui file
+        loadUi("customerEntry.ui", self)
+
+        # load the csv file as dataframe
+        self._columnNames = ['Customer ID', 'Customer Name', 'Addr1', 'Addr2', 'Addr3', 'Addr4',
+                             'Tel No', 'GST Reg', 'Fax No', 'Account No']
+        self._df = load_csv("customerList.csv", self._columnNames)
 
         # table model
         self._model = tableModel(self._df)
