@@ -4,6 +4,8 @@ from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QHeaderView, QAbstractItemView
 from PyQt5.QtCore import QAbstractTableModel, QSortFilterProxyModel, Qt
 import pandas as pd
+import os.path
+from pathlib import Path
 
 
 class tableModel(QAbstractTableModel):
@@ -30,17 +32,34 @@ class tableModel(QAbstractTableModel):
         return None
 
 
+def load_csv(fileName):
+    # check if the .csv file exist
+    filePath = Path("./" + fileName)
+
+    if not filePath.exists():
+        # if the file path does not exist then create new empty dataframe and save it
+        columnNames = ['Customer ID', 'Customer Name', 'Addr1', 'Addr2', 'Addr3', 'Addr4',
+                       'Tel No', 'GST Reg', 'Fax No', 'Account No']
+        df = pd.DataFrame(columns=columnNames)
+        df.to_csv(fileName, index=False)
+
+    else:
+        df = pd.read_csv(fileName)
+
+    return df
+
+
 class CustomerEntry(QtWidgets.QMainWindow):
     def __init__(self):
         super(CustomerEntry, self).__init__()
 
         loadUi("customerEntry.ui", self)  # load the ui file
-        self._df = pd.read_csv("customerList.csv")
+        self._df = load_csv("customerList.csv")
 
         # table model
         self._model = tableModel(self._df)
 
-        # filter proxy model
+        # filter proxy model for search functionality
         self.proxy = QtCore.QSortFilterProxyModel(self)
         self.proxy.setSourceModel(self._model)
         self.proxy.setFilterCaseSensitivity(Qt.CaseInsensitive)  # case insensitivity
