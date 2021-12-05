@@ -271,6 +271,26 @@
          <height>31</height>
         </rect>
        </property>
+       <item>
+        <property name="text">
+         <string>W</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>M</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>F</string>
+        </property>
+       </item>
       </widget>
       <widget class="QLineEdit" name="contractorName">
        <property name="geometry">

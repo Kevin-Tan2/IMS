@@ -73,6 +73,15 @@ class ContractorEntry(QtWidgets.QMainWindow):
         self.contractorTable.setSelectionBehavior(QAbstractItemView.SelectRows)  # to select entire row instead of cell
         self.contractorTable.setModel(self.proxy)  # to set the proxy model into the table view
 
+        # event response
+        self.resetButton.clicked.connect(self.reset_entries)
+
+    def reset_entries(self):
+
+        self.contractorID.clear()
+        self.contractorName.clear()
+        self.employeeNo.clear()
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
