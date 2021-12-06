@@ -82,6 +82,26 @@ class ContractorEntry(QtWidgets.QMainWindow):
         self.contractorName.clear()
         self.employeeNo.clear()
 
+    def construct_df(self):
+        # construct a new data frame from the QLineEdits
+        division = str(self.divBox.currentText())
+        contractorID = str(self.contractorID.text())
+        contractorName = str(self.contractorName.text())
+        employeeNo = str(self.employeeNo.text())
+        contractType = None
+        if self.contractRadio.isChecked():
+            contractType = str(self.contractRadio.text())
+
+        elif self.nonContRadio.isChecked():
+            contractType = str(self.nonContRadio.text())
+
+        df = pd.DataFrame({'Division': [division],
+                           'Contractor ID': [contractorID],
+                           'Contractor Name': [contractorName],
+                           'Employee No': [employeeNo],
+                           'Contractor Type': [contractType]})
+        return df
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
