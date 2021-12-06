@@ -102,6 +102,12 @@ class ContractorEntry(QtWidgets.QMainWindow):
                            'Contractor Type': [contractType]})
         return df
 
+    def refresh_table(self):
+        # refresh the table whenever data frame has been changed
+        self._model = tableModel(self._df)
+        self.proxy.setSourceModel(self._model)
+        self.contractorTable.setModel(self.proxy)
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
