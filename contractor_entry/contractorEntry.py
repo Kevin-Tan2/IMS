@@ -76,6 +76,7 @@ class ContractorEntry(QtWidgets.QMainWindow):
         # event response
         self.resetButton.clicked.connect(self.reset_entries)
         self.addButton.clicked.connect(self.add_df)
+        self.saveButton.clicked.connect(self.save_csv)
 
     def reset_entries(self):
 
@@ -115,6 +116,10 @@ class ContractorEntry(QtWidgets.QMainWindow):
         df2 = self.construct_df()
         self._df = df1.append(df2, ignore_index=True)  # adding new row into the dataframe
         self.refresh_table()
+
+    def save_csv(self):
+        # save the dataframe into .csv file (ignoring the index)
+        self._df.to_csv("contractorList.csv", index=False)
 
 
 if __name__ == "__main__":
