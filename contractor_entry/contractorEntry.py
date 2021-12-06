@@ -75,6 +75,7 @@ class ContractorEntry(QtWidgets.QMainWindow):
 
         # event response
         self.resetButton.clicked.connect(self.reset_entries)
+        self.addButton.clicked.connect(self.add_df)
 
     def reset_entries(self):
 
@@ -107,6 +108,13 @@ class ContractorEntry(QtWidgets.QMainWindow):
         self._model = tableModel(self._df)
         self.proxy.setSourceModel(self._model)
         self.contractorTable.setModel(self.proxy)
+
+    def add_df(self):
+        # adding new data into the dataframe
+        df1 = self._df  # store the current data frame into a temp variable
+        df2 = self.construct_df()
+        self._df = df1.append(df2, ignore_index=True)  # adding new row into the dataframe
+        self.refresh_table()
 
 
 if __name__ == "__main__":
