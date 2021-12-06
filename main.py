@@ -5,11 +5,18 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.uic import loadUi
 
 
+class MainWindow(QtWidgets.QMainWindow):
+
+    def __init__(self):
+        super().__init__()
+
+        loadUi("main.ui", self)
+
+
 class Controller:
 
     def __init__(self):
-        self.customerEntry = customerEntry.CustomerEntry("./customer_entry/customerEntry.ui", "customer_entry"
-                                                                                              "/customerList.csv")
+        self.mainWindow = MainWindow()
         self.loginPage = login.LoginPage("./login/login.ui", "./login/listUsers.csv")
 
     def show_login(self):
@@ -24,7 +31,7 @@ class Controller:
         self.loginPage.close()
 
         # display the customer entry
-        self.customerEntry.show()
+        self.mainWindow.show()
 
 
 def main():
