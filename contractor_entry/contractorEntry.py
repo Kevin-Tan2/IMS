@@ -77,6 +77,7 @@ class ContractorEntry(QtWidgets.QMainWindow):
         self.resetButton.clicked.connect(self.reset_entries)
         self.addButton.clicked.connect(self.add_df)
         self.saveButton.clicked.connect(self.save_csv)
+        self.deleteButton.clicked.connect(self.delete_row)
 
     def reset_entries(self):
 
@@ -120,6 +121,21 @@ class ContractorEntry(QtWidgets.QMainWindow):
     def save_csv(self):
         # save the dataframe into .csv file (ignoring the index)
         self._df.to_csv("contractorList.csv", index=False)
+
+    def delete_row(self):
+        # delete the selected row
+        index_list = []  # to store list of selected rows
+
+        for model_index in self.contractorTable.selectionModel().selectedRows():
+            index = QtCore.QPersistentModelIndex(model_index)
+            index_list.append(index)  # append the selected indices into index_list
+
+        for index in index_list:  # delete all selected rows
+            tempDf = self._df
+            self._df = tempDf.drop(index.row())  # delete each selected row from the dataframe
+
+        self._df = self._df.reset_index(drop=True)  # reset the index in numerical order
+        self.refresh_table()
 
 
 if __name__ == "__main__":
