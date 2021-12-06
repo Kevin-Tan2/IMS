@@ -79,6 +79,7 @@ class ContractorEntry(QtWidgets.QMainWindow):
         self.saveButton.clicked.connect(self.save_csv)
         self.deleteButton.clicked.connect(self.delete_row)
         self.searchBar.textChanged.connect(self.search_query)
+        self.closeButton.clicked.connect(self.close)
 
     def reset_entries(self):
 
