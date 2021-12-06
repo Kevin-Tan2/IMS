@@ -17,11 +17,18 @@
    <widget class="QFrame" name="customersFrame1">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>10</y>
-      <width>391</width>
+      <x>680</x>
+      <y>20</y>
+      <width>301</width>
       <height>71</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -40,7 +47,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -58,7 +68,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -74,6 +87,13 @@
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
     </widget>
     <widget class="QLineEdit" name="inputCustomerNo">
      <property name="geometry">
@@ -83,6 +103,13 @@
        <width>113</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
      </property>
     </widget>
    </widget>
@@ -94,6 +121,13 @@
       <width>651</width>
       <height>261</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -112,9 +146,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
@@ -135,7 +170,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
@@ -156,7 +194,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -174,7 +215,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -192,7 +236,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -210,7 +257,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -228,7 +278,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -246,7 +299,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -264,7 +320,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -282,7 +341,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -300,7 +362,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <item>
@@ -330,7 +395,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
     </widget>
@@ -345,7 +413,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
     </widget>
@@ -360,7 +431,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
     </widget>
@@ -375,7 +449,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
     </widget>
@@ -390,7 +467,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
     </widget>
@@ -405,7 +485,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
     </widget>
@@ -420,7 +503,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
     </widget>
@@ -435,7 +521,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
     </widget>
@@ -450,7 +539,10 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
     </widget>
@@ -605,6 +697,18 @@
         <height>271</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QTableCornerButton::section {
+    background: red;
+    border: 2px outset red;
+}
+selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                stop: 0 #FF92BB, stop: 1 white);
+QHeaderView::section {
+	background-color: rgb(255, 255, 127);
+	border: 2px outset black;
+}</string>
+      </property>
      </widget>
     </widget>
     <widget class="QFrame" name="frame_5">
@@ -636,10 +740,19 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>10</y>
+        <y>6</y>
         <width>41</width>
-        <height>16</height>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
@@ -658,7 +771,7 @@
      <x>0</x>
      <y>0</y>
      <width>1016</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

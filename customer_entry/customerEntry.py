@@ -34,7 +34,7 @@ class tableModel(QAbstractTableModel):
 
 def load_csv(fileName, columnNames):
     # check if the .csv file exist
-    filePath = Path("./" + fileName)
+    filePath = Path(fileName)
 
     if not filePath.exists():
         # if the file path does not exist then create new empty dataframe and save it
@@ -47,16 +47,19 @@ def load_csv(fileName, columnNames):
 
 
 class CustomerEntry(QtWidgets.QMainWindow):
-    def __init__(self):
+
+    switch_window = QtCore.pyqtSignal()
+
+    def __init__(self, uiFilePath, csvFilePath):
         super(CustomerEntry, self).__init__()
 
         # load the ui file
-        loadUi("customerEntry.ui", self)
+        loadUi(uiFilePath, self)
 
         # load the csv file as dataframe
         self._columnNames = ['Customer ID', 'Customer Name', 'Addr1', 'Addr2', 'Addr3', 'Addr4',
                              'Tel No', 'GST Reg', 'Fax No', 'Account No']
-        self._df = load_csv("customerList.csv", self._columnNames)
+        self._df = load_csv(csvFilePath, self._columnNames)
 
         # table model
         self._model = tableModel(self._df)
@@ -69,6 +72,7 @@ class CustomerEntry(QtWidgets.QMainWindow):
 
         # table view model
         self.customerIDTable.horizontalHeader().setStretchLastSection(True)  # to stretch the header size to fit
+        # self.customerIDTable.horizontalHeader().setStyleSheet("background-color: white;")
         self.customerIDTable.setSelectionBehavior(QAbstractItemView.SelectRows)  # to select entire row instead of cell
         self.customerIDTable.setModel(self.proxy)  # to set the proxy model into the table view
         for column_hidden in range(2, self._df.shape[1]):
@@ -95,7 +99,6 @@ class CustomerEntry(QtWidgets.QMainWindow):
         self.inputGST.clear()
         self.inputFax.clear()
         self.inputAccountNo.clear()
-
 
     def search_query(self):
         # to filter out data that does not match with the search bar
@@ -138,7 +141,7 @@ class CustomerEntry(QtWidgets.QMainWindow):
 
     def save_csv(self):
         # save the dataframe into .csv file (ignoring the index)
-        self._df.to_csv("customerList.csv", index=False)
+        self._df.to_csv("customer_entry/customerList.csv", index=False)
 
     def add_df(self):
         # adding new data into the dataframe
@@ -165,6 +168,6 @@ class CustomerEntry(QtWidgets.QMainWindow):
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    customerEntry = CustomerEntry()
+    customerEntry = CustomerEntry("./customerEntry.ui", "./customerList.csv")
     customerEntry.show()
     sys.exit(app.exec_())
