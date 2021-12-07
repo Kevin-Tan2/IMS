@@ -34,3 +34,10 @@ class RWSupplier(QtWidgets.QMainWindow):
         self.tableView.horizontalHeader().setStretchLastSection(True)  # to stretch the header size to fit
         self.tableView.setSelectionBehavior(QAbstractItemView.SelectRows)  # to select entire row instead of cell
         self.tableView.setModel(self._model)  # to set the proxy model into the table view
+
+        # set event
+        self.resetButton.clicked.connect(self.reset_entries)
+
+    def reset_entries(self):
+        self.supplierID.clear()
+        self.supplierName.clear()
