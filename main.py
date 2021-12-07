@@ -10,7 +10,16 @@ class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
 
+        # load the main.ui
         loadUi("main.ui", self)
+
+        # set event responses
+        self.customerEntryBtn.clicked.connect(self.customer_entry)
+
+    def customer_entry(self):
+        self.customerEntry = customerEntry.CustomerEntry("./customer_entry/customerEntry.ui",
+                                                         "./customer_entry/customerList.csv")
+        self.customerEntry.show()
 
 
 class Controller:
