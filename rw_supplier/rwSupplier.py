@@ -30,16 +30,25 @@ class RWSupplier(QtWidgets.QMainWindow):
         # create tableModel instance
         self._model = tableModel(self._df)
 
+        # filter proxy model for search functionality
+        self.proxy = QtCore.QSortFilterProxyModel(self)
+        self.proxy.setSourceModel(self._model)
+        self.proxy.setFilterCaseSensitivity(Qt.CaseInsensitive)  # case insensitivity
+        self.proxy.setFilterKeyColumn(-1)  # -1 search all columns
+
         # table view model
         self.tableView.horizontalHeader().setStretchLastSection(True)  # to stretch the header size to fit
         self.tableView.setSelectionBehavior(QAbstractItemView.SelectRows)  # to select entire row instead of cell
-        self.tableView.setModel(self._model)  # to set the proxy model into the table view
+        self.tableView.setModel(self.proxy)  # to set the proxy model into the table view
 
         # set event
         self.resetButton.clicked.connect(self.reset_entries)
         self.addButton.clicked.connect(self.add_df)
         self.deleteButton.clicked.connect(self.delete_row)
         self.saveButton.clicked.connect(self.save_csv)
+
+        # call event response the moment the text input has been changed
+        self.searchBar.textChanged.connect(self.search_query)
 
     def reset_entries(self):
         self.supplierID.clear()
@@ -57,7 +66,8 @@ class RWSupplier(QtWidgets.QMainWindow):
     def refresh_table(self):
         # refresh the table whenever data frame has been changed
         self._model = tableModel(self._df)
-        self.tableView.setModel(self._model)
+        self.proxy.setSourceModel(self._model)
+        self.tableView.setModel(self.proxy)
 
     def add_df(self):
         # adding new data into the dataframe
@@ -84,3 +94,7 @@ class RWSupplier(QtWidgets.QMainWindow):
     def save_csv(self):
         # save the dataframe into .csv file (ignoring the index)
         self._df.to_csv("./rw_supplier/rwSupplierList.csv", index=False)
+
+    def search_query(self):
+        # to filter out data that does not match with the search bar
+        self.proxy.setFilterFixedString(self.searchBar.text())
