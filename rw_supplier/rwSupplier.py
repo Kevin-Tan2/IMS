@@ -39,6 +39,7 @@ class RWSupplier(QtWidgets.QMainWindow):
         self.resetButton.clicked.connect(self.reset_entries)
         self.addButton.clicked.connect(self.add_df)
         self.deleteButton.clicked.connect(self.delete_row)
+        self.saveButton.clicked.connect(self.save_csv)
 
     def reset_entries(self):
         self.supplierID.clear()
@@ -79,3 +80,7 @@ class RWSupplier(QtWidgets.QMainWindow):
 
         self._df = self._df.reset_index(drop=True)  # reset the index in numerical order
         self.refresh_table()
+
+    def save_csv(self):
+        # save the dataframe into .csv file (ignoring the index)
+        self._df.to_csv("./rw_supplier/rwSupplierList.csv", index=False)
