@@ -50,8 +50,11 @@ class CustomerEntry(QtWidgets.QMainWindow):
 
     switch_window = QtCore.pyqtSignal()
 
-    def __init__(self, uiFilePath, csvFilePath):
+    def __init__(self):
         super(CustomerEntry, self).__init__()
+
+        uiFilePath = "./customer_entry/customerEntry.ui"
+        csvFilePath = "./customer_entry/customerList.csv"
 
         # load the ui file
         loadUi(uiFilePath, self)
@@ -83,8 +86,11 @@ class CustomerEntry(QtWidgets.QMainWindow):
         self.saveButton.clicked.connect(self.save_csv)
         self.addButton.clicked.connect(self.add_df)
         self.deleteButton.clicked.connect(self.delete_row)
-        self.closeButton.clicked.connect(self.close)
+        self.closeButton.clicked.connect(self.close_window)
         self.searchBar.textChanged.connect(self.search_query)
+
+    def close_window(self):
+        self.switch_window.emit()
 
     def reset_entries(self):
         # clears the line entries

@@ -51,13 +51,13 @@ class ContractorEntry(QtWidgets.QMainWindow):
         super(ContractorEntry, self).__init__()
 
         # load UI
-        loadUi("contractorEntry.ui", self)
+        loadUi("./contractor_entry/contractorEntry.ui", self)
 
         # create headers for .csv use
         self._columnNames = ['Division', 'Contractor ID', 'Contractor Name', 'Employee No', 'Contractor Type']
 
         # load contractorList.csv
-        self._df = load_csv("contractorList.csv", self._columnNames)
+        self._df = load_csv("./contractor_entry/contractorList.csv", self._columnNames)
 
         # create tableModel instance
         self._model = tableModel(self._df)
