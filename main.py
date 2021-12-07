@@ -11,15 +11,17 @@ class MainWindow(QtWidgets.QMainWindow):
         super().__init__()
 
         # load the main.ui
+        #self.customerEntry = customerEntry.CustomerEntry("./customer_entry/customerEntry.ui",
+        #                                               "./customer_entry/customerList.csv")
         loadUi("main.ui", self)
 
         # set event responses
-        self.customerEntryBtn.clicked.connect(self.customer_entry)
+        self.customerEntryBtn.clicked.connect(lambda: self.display(0))
+        self.rwContBtn.clicked.connect(lambda: self.display(1))
 
-    def customer_entry(self):
-        self.customerEntry = customerEntry.CustomerEntry("./customer_entry/customerEntry.ui",
-                                                         "./customer_entry/customerList.csv")
-        self.customerEntry.show()
+    def display(self, index):
+        print(index)
+        self.stackedWidget.setCurrentIndex(index)
 
 
 class Controller:
