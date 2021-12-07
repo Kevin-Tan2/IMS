@@ -11,16 +11,14 @@ class MainWindow(QtWidgets.QMainWindow):
         super().__init__()
 
         # load the main.ui
-        #self.customerEntry = customerEntry.CustomerEntry("./customer_entry/customerEntry.ui",
-        #                                               "./customer_entry/customerList.csv")
         loadUi("main.ui", self)
 
         # set event responses
         self.customerEntryBtn.clicked.connect(lambda: self.display(0))
         self.rwContBtn.clicked.connect(lambda: self.display(1))
+        self.rwSupplierBtn.clicked.connect(lambda: self.display(2))
 
     def display(self, index):
-        print(index)
         self.stackedWidget.setCurrentIndex(index)
 
 
