@@ -5,7 +5,6 @@ import pandas as pd
 
 
 class LoginPage(QtWidgets.QDialog):
-
     switch_window = QtCore.pyqtSignal()
 
     def __init__(self, uiFilePath, csvFilePath):
@@ -36,10 +35,7 @@ class LoginPage(QtWidgets.QDialog):
             # check if there are any existing username and their matching password
             if self.inputUser.text() == str(df.iloc[row, userCol]) and self.inputPass.text() == str(
                     df.iloc[row, passCol]):
-                msg.setText("Success")
-                msg.exec_()
                 self.switch_window.emit()
-                #app.quit()
 
             else:
                 msg.setText("Incorrect Username or Password")
