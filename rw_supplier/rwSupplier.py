@@ -49,8 +49,8 @@ class RWSupplier(QtWidgets.QMainWindow):
         supplierName = str(self.supplierName.text())
         supplierID = str(self.supplierID.text())
 
-        df = pd.DataFrame({'Supplier ID': [supplierName],
-                           'Supplier Name': [supplierID]})
+        df = pd.DataFrame({'Supplier ID': [supplierID],
+                           'Supplier Name': [supplierName]})
         return df
 
     def refresh_table(self):
