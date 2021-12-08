@@ -47,7 +47,6 @@ def load_csv(fileName, columnNames):
 
 
 class CustomerEntry(QtWidgets.QMainWindow):
-
     switch_window = QtCore.pyqtSignal()
 
     def __init__(self):
@@ -60,9 +59,10 @@ class CustomerEntry(QtWidgets.QMainWindow):
         loadUi(uiFilePath, self)
 
         # load the csv file as dataframe
-        self._columnNames = ['Customer ID', 'Customer Name', 'Addr1', 'Addr2', 'Addr3', 'Addr4',
+        self._columnNames = ['Customer No', 'Customer ID', 'Customer Name', 'Addr1', 'Addr2', 'Addr3', 'Addr4',
                              'Tel No', 'GST Reg', 'Fax No', 'Account No']
         self._df = load_csv(csvFilePath, self._columnNames)
+        self._df = self._df.sort_values('Customer ID')
 
         # table model
         self._model = tableModel(self._df)
@@ -78,7 +78,8 @@ class CustomerEntry(QtWidgets.QMainWindow):
         # self.customerIDTable.horizontalHeader().setStyleSheet("background-color: white;")
         self.customerIDTable.setSelectionBehavior(QAbstractItemView.SelectRows)  # to select entire row instead of cell
         self.customerIDTable.setModel(self.proxy)  # to set the proxy model into the table view
-        for column_hidden in range(2, self._df.shape[1]):
+
+        for column_hidden in range(3, self._df.shape[1]):
             self.customerIDTable.hideColumn(column_hidden)  # hide other columns except Customer ID and Name
 
         # event responses
@@ -111,12 +112,24 @@ class CustomerEntry(QtWidgets.QMainWindow):
         self.proxy.setFilterFixedString(self.searchBar.text())
 
     def refresh_table(self):
+
+        # sort by Customer ID ascending
+        self._df = self._df.sort_values(by='Customer ID')
+
+        # reset the index in numerical order
+        self._df = self._df.reset_index(drop=True)
+
+        # autofill the customer no
+        for i in range(0, self._df.shape[0]):
+            self._df.at[i, "Customer No"] = int(i)
+
         # refresh the table whenever data frame has been changed
         self._model = tableModel(self._df)
         self.proxy.setSourceModel(self._model)
         self.customerIDTable.setModel(self.proxy)
 
-        for column_hidden in range(2, self._df.shape[1]):
+        # self._df.shape[0] is the
+        for column_hidden in range(3, self._df.shape[1]):
             self.customerIDTable.hideColumn(column_hidden)
 
     def construct_df(self):
@@ -132,7 +145,8 @@ class CustomerEntry(QtWidgets.QMainWindow):
         gstReg = str(self.inputGST.text())
         faxNo = str(self.inputFax.text())
         accountNo = str(self.inputAccountNo.text())
-        df = pd.DataFrame({'Customer ID': [customerID],
+        df = pd.DataFrame({'Customer No': None,
+                           'Customer ID': [customerID],
                            'Customer Name': [customerName],
                            'Customer Type': [customerType],
                            'Addr1': [addr1],
@@ -146,6 +160,7 @@ class CustomerEntry(QtWidgets.QMainWindow):
         return df
 
     def save_csv(self):
+        self.refresh_table()
         # save the dataframe into .csv file (ignoring the index)
         self._df.to_csv("customer_entry/customerList.csv", index=False)
 
@@ -168,7 +183,6 @@ class CustomerEntry(QtWidgets.QMainWindow):
             tempDf = self._df
             self._df = tempDf.drop(index.row())  # delete each selected row from the dataframe
 
-        self._df = self._df.reset_index(drop=True)  # reset the index in numerical order
         self.refresh_table()
 
 
