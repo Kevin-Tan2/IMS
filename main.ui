@@ -6,23 +6,32 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1260</width>
-    <height>687</height>
+    <width>1007</width>
+    <height>776</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1260</width>
-    <height>0</height>
+    <width>1005</width>
+    <height>687</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
+    <item alignment="Qt::AlignLeft">
      <widget class="QFrame" name="frame">
+      <property name="minimumSize">
+       <size>
+        <width>972</width>
+        <height>614</height>
+       </size>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -30,8 +39,23 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
-        <widget class="QFrame" name="frame_3">
+        <widget class="QFrame" name="sideMenuContainer">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -40,7 +64,7 @@
          </property>
          <property name="maximumSize">
           <size>
-           <width>260</width>
+           <width>0</width>
            <height>16777215</height>
           </size>
          </property>
@@ -68,6 +92,18 @@
           </property>
           <item>
            <widget class="QToolBox" name="toolBox">
+            <property name="minimumSize">
+             <size>
+              <width>230</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <property name="font">
              <font>
               <pointsize>10</pointsize>
@@ -84,8 +120,8 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>237</width>
-               <height>557</height>
+               <width>230</width>
+               <height>627</height>
               </rect>
              </property>
              <attribute name="label">
@@ -704,8 +740,8 @@ border-color: rgb(85, 0, 255);
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>258</width>
-               <height>516</height>
+               <width>230</width>
+               <height>627</height>
               </rect>
              </property>
              <attribute name="label">
@@ -717,19 +753,149 @@ border-color: rgb(85, 0, 255);
          </layout>
         </widget>
        </item>
-       <item>
-        <widget class="QStackedWidget" name="stackedWidget">
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
+       <item alignment="Qt::AlignRight">
+        <widget class="QFrame" name="frame_4">
+         <property name="minimumSize">
+          <size>
+           <width>972</width>
+           <height>664</height>
+          </size>
          </property>
-         <property name="currentIndex">
-          <number>0</number>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
          </property>
-         <widget class="CustomerEntry" name="customerEntry"/>
-         <widget class="ContractorEntry" name="contractorEntry"/>
-         <widget class="RWSupplier" name="rwSupplier"/>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="frame_5">
+            <property name="minimumSize">
+             <size>
+              <width>970</width>
+              <height>52</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QFrame" name="frame_6">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item alignment="Qt::AlignLeft">
+                 <widget class="QPushButton" name="sideMenuBtn">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>icons/menu-bar.png</normaloff>icons/menu-bar.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>33</width>
+                    <height>33</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_7">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+            <zorder>frame_7</zorder>
+            <zorder>frame_6</zorder>
+           </widget>
+          </item>
+          <item>
+           <widget class="QStackedWidget" name="stackedWidget">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <widget class="CustomerEntry" name="customerEntry"/>
+            <widget class="ContractorEntry" name="contractorEntry"/>
+            <widget class="RWSupplier" name="rwSupplier"/>
+           </widget>
+          </item>
+         </layout>
+         <zorder>stackedWidget</zorder>
+         <zorder>frame_5</zorder>
         </widget>
        </item>
       </layout>
@@ -742,7 +908,7 @@ border-color: rgb(85, 0, 255);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1260</width>
+     <width>1007</width>
      <height>26</height>
     </rect>
    </property>
@@ -769,6 +935,8 @@ border-color: rgb(85, 0, 255);
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections/>
 </ui>
