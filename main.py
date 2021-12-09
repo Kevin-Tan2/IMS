@@ -57,12 +57,17 @@ class MainWindow(QtWidgets.QMainWindow):
         # load the main.ui
 
         loadUi("main.ui", self)
+
+        # side bar menu animation
         self.animation = QPropertyAnimation(self.sideMenuContainer, b"maximumWidth")  # Animate minimumWidht
 
         # set event responses
         self.customerEntryBtn.clicked.connect(lambda: self.display(0))
         self.rwContBtn.clicked.connect(lambda: self.display(1))
         self.rwSupplierBtn.clicked.connect(lambda: self.display(2))
+        self.userMaintBtn.clicked.connect(lambda: self.display(3))
+
+        # set event response for side bar menu button
         self.sideMenuBtn.clicked.connect(self.toggleMenu)
 
     def display(self, index):

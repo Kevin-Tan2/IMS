@@ -915,6 +915,7 @@ border-color: rgb(85, 0, 255);
             <widget class="CustomerEntry" name="customerEntry"/>
             <widget class="ContractorEntry" name="contractorEntry"/>
             <widget class="RWSupplier" name="rwSupplier"/>
+            <widget class="UserMaintenance" name="userMaintenance"/>
            </widget>
           </item>
          </layout>
@@ -956,6 +957,12 @@ border-color: rgb(85, 0, 255);
    <class>RWSupplier</class>
    <extends>QWidget</extends>
    <header>rw_supplier/rwSupplier</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>UserMaintenance</class>
+   <extends>QWidget</extends>
+   <header>maintenance_entry/userMaintenanceEntry</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
