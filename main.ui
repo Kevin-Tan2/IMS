@@ -764,8 +764,8 @@ border-color: rgb(85, 0, 255);
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>210</width>
-               <height>719</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <attribute name="label">
@@ -834,7 +834,7 @@ border-color: rgb(85, 0, 255);
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item>
+             <item alignment="Qt::AlignLeft">
               <widget class="QFrame" name="frame_6">
                <property name="minimumSize">
                 <size>
@@ -884,6 +884,24 @@ border-color: rgb(85, 0, 255);
                   </property>
                  </widget>
                 </item>
+                <item>
+                 <widget class="QLabel" name="sectionName">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>14</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Master Maintenance</string>
+                  </property>
+                  <property name="margin">
+                   <number>20</number>
+                  </property>
+                 </widget>
+                </item>
                </layout>
               </widget>
              </item>
@@ -910,12 +928,13 @@ border-color: rgb(85, 0, 255);
              </font>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>4</number>
             </property>
             <widget class="CustomerEntry" name="customerEntry"/>
             <widget class="ContractorEntry" name="contractorEntry"/>
             <widget class="RWSupplier" name="rwSupplier"/>
             <widget class="UserMaintenance" name="userMaintenance"/>
+            <widget class="KDCharge" name="kdCharge"/>
            </widget>
           </item>
          </layout>
@@ -963,6 +982,12 @@ border-color: rgb(85, 0, 255);
    <class>UserMaintenance</class>
    <extends>QWidget</extends>
    <header>maintenance_entry/userMaintenanceEntry</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>KDCharge</class>
+   <extends>QWidget</extends>
+   <header>kd_charge/kdCharge</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
