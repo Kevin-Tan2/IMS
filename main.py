@@ -6,50 +6,13 @@ from customer_entry import customerEntry
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt
 from PyQt5.uic import loadUi
+from tableViewModel import tableModel, load_csv
 import pandas as pd
 import icons
 from pathlib import Path
 
 
-class tableModel(QAbstractTableModel):
-    # table model is taken from https://learndataanalysis.org/display-pandas-dataframe-with-pyqt5-qtableview-widget/
-    def __init__(self, data):
-        QAbstractTableModel.__init__(self)
-        self._data = data
-
-    def rowCount(self, parent=None):
-        return self._data.shape[0]
-
-    def columnCount(self, parent=None):
-        return self._data.shape[1]
-
-    def data(self, index, role=Qt.DisplayRole):
-        if index.isValid():
-            if role == Qt.DisplayRole:
-                return str(self._data.iloc[index.row(), index.column()])
-        return None
-
-    def headerData(self, col, orientation, role):
-        if orientation == Qt.Horizontal and role == Qt.DisplayRole:
-            return self._data.columns[col]
-        return None
-
-
-def load_csv(fileName, columnNames):
-    # check if the .csv file exist
-    filePath = Path("./" + fileName)
-
-    if not filePath.exists():
-        # if the file path does not exist then create new empty dataframe and save it
-        df = pd.DataFrame(columns=columnNames)
-
-    else:
-        df = pd.read_csv(fileName)
-
-    return df
-
-
-class MainWindow(QtWidgets.QMainWindow):
+class MasterMaintenance(QtWidgets.QMainWindow):
 
     def __init__(self):
         super().__init__()
@@ -97,7 +60,7 @@ class MainWindow(QtWidgets.QMainWindow):
 class Controller:
 
     def __init__(self):
-        self.mainWindow = MainWindow()
+        self.masterMaintenance = MasterMaintenance()
         self.loginPage = login.LoginPage("./login/login.ui", "./login/listUsers.csv")
 
     def show_login(self):
@@ -105,14 +68,14 @@ class Controller:
         self.loginPage.show()
 
         # event response when the signal is emitted from the login page
-        self.loginPage.switch_window.connect(self.show_main)
+        self.loginPage.switch_window.connect(self.show_maintenance)
 
-    def show_main(self):
+    def show_maintenance(self):
         # close the login page
         self.loginPage.close()
 
         # display the customer entry
-        self.mainWindow.show()
+        self.masterMaintenance.show()
 
 
 def main():
