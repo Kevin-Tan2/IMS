@@ -122,7 +122,7 @@ class ContractorEntry(QtWidgets.QMainWindow):
 
     def save_csv(self):
         # save the dataframe into .csv file (ignoring the index)
-        self._df.to_csv("contractorList.csv", index=False)
+        self._df.to_csv("./contractor_entry/contractorList.csv", index=False)
 
     def delete_row(self):
         # delete the selected row
