@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>972</width>
-    <height>823</height>
+    <height>732</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -30,8 +30,20 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
+       <item alignment="Qt::AlignHCenter">
         <widget class="QFrame" name="frame_2">
+         <property name="minimumSize">
+          <size>
+           <width>926</width>
+           <height>78</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>926</width>
+           <height>78</height>
+          </size>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -155,7 +167,7 @@
          </layout>
         </widget>
        </item>
-       <item>
+       <item alignment="Qt::AlignHCenter">
         <widget class="QFrame" name="frame_3">
          <property name="minimumSize">
           <size>
@@ -207,8 +219,14 @@
            <widget class="QFrame" name="frame_8">
             <property name="minimumSize">
              <size>
-              <width>0</width>
-              <height>400</height>
+              <width>902</width>
+              <height>410</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>902</width>
+              <height>410</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -432,7 +450,7 @@ border-bottom: 1px solid black
          </layout>
         </widget>
        </item>
-       <item alignment="Qt::AlignRight">
+       <item alignment="Qt::AlignHCenter">
         <widget class="QFrame" name="frame_4">
          <property name="minimumSize">
           <size>
