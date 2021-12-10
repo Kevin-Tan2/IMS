@@ -84,7 +84,7 @@ class CustomerEntry(QtWidgets.QMainWindow):
 
         # autofill the customer no
         for i in range(0, self._df.shape[0]):
-            self._df.at[i, "Customer No"] = int(i)
+            self._df.at[i, "Customer No"] = int(i + 1)
 
         # refresh the table whenever data frame has been changed
         self._model = tableModel(self._df)
