@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1067</width>
-    <height>831</height>
+    <width>1239</width>
+    <height>864</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -136,7 +136,7 @@ border-right: 1px solid black;
                <x>0</x>
                <y>0</y>
                <width>210</width>
-               <height>696</height>
+               <height>729</height>
               </rect>
              </property>
              <attribute name="label">
@@ -764,8 +764,8 @@ border-color: rgb(85, 0, 255);
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>100</width>
-               <height>30</height>
+               <width>210</width>
+               <height>729</height>
               </rect>
              </property>
              <attribute name="label">
@@ -928,13 +928,14 @@ border-color: rgb(85, 0, 255);
              </font>
             </property>
             <property name="currentIndex">
-             <number>4</number>
+             <number>0</number>
             </property>
             <widget class="CustomerEntry" name="customerEntry"/>
             <widget class="ContractorEntry" name="contractorEntry"/>
             <widget class="RWSupplier" name="rwSupplier"/>
             <widget class="UserMaintenance" name="userMaintenance"/>
             <widget class="KDCharge" name="kdCharge"/>
+            <widget class="PTCharge" name="ptCharge"/>
            </widget>
           </item>
          </layout>
@@ -952,7 +953,7 @@ border-color: rgb(85, 0, 255);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1067</width>
+     <width>1239</width>
      <height>26</height>
     </rect>
    </property>
@@ -988,6 +989,12 @@ border-color: rgb(85, 0, 255);
    <class>KDCharge</class>
    <extends>QWidget</extends>
    <header>kd_charge/kdCharge</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PTCharge</class>
+   <extends>QWidget</extends>
+   <header>pt_charge/ptCharge</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
