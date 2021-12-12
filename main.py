@@ -2,7 +2,7 @@ import sys
 
 from PyQt5.QtCore import QAbstractTableModel, QPropertyAnimation
 from login import login
-from customer_entry import customerEntry
+from customer_entry import customerEntry_proto
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt
 from PyQt5.uic import loadUi
