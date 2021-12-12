@@ -23,16 +23,23 @@ class MasterMaintenance(QtWidgets.QMainWindow):
         # create table model based of the object data frame
         self.model = tableModel(self.df)
 
+        # create proxy model to enable search function
+        self.proxy = QtCore.QSortFilterProxyModel(self)
+        self.proxy.setSourceModel(self.model)
+        self.proxy.setFilterCaseSensitivity(Qt.CaseInsensitive)  # case insensitivity
+        self.proxy.setFilterKeyColumn(-1)  # -1 search all columns
+
         # create table view model
         self.tableView.horizontalHeader().setStretchLastSection(True)  # to stretch the header size to fit
         self.tableView.setSelectionBehavior(QAbstractItemView.SelectRows)  # to select entire row instead of cell
-        self.tableView.setModel(self.model)  # to set the proxy model into the table view
+        self.tableView.setModel(self.proxy)  # to set the proxy model into the table view
 
         # event responses
         self.resetButton.clicked.connect(self.reset_entries)
         self.addButton.clicked.connect(self.add_df)
         self.deleteButton.clicked.connect(self.delete_row)
         self.saveButton.clicked.connect(self.save_csv)
+        self.searchBar.textChanged.connect(self.search_query)
 
     def reset_entries(self):
         pass
@@ -43,7 +50,8 @@ class MasterMaintenance(QtWidgets.QMainWindow):
     def refresh_table(self):
         # refresh the table whenever data frame has been changed
         self.model = tableModel(self.df)
-        self.tableView.setModel(self.model)
+        self.proxy.setSourceModel(self.model)
+        self.tableView.setModel(self.proxy)
 
     def add_df(self, df):
         # adding new data into the dataframe
@@ -69,3 +77,7 @@ class MasterMaintenance(QtWidgets.QMainWindow):
         self.refresh_table()
         # save the dataframe into .csv file (ignoring the index)
         self.df.to_csv(csvFilePath, index=False)
+
+    def search_query(self):
+        # to filter out data that does not match with the search bar
+        self.proxy.setFilterFixedString(self.searchBar.text())
