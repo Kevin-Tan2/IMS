@@ -14,7 +14,7 @@ class tableModel(QAbstractTableModel):
     def rowCount(self, parent=None):
         return self._data.shape[0]
 
-    def columnCount(self, parnet=None):
+    def columnCount(self, parent=None):
         return self._data.shape[1]
 
     def data(self, index, role=Qt.DisplayRole):
