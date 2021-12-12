@@ -30,6 +30,21 @@ class MasterMaintenance(QtWidgets.QMainWindow):
 
         # event responses
         self.resetButton.clicked.connect(self.reset_entries)
+        self.addButton.clicked.connect(self.add_df)
 
     def reset_entries(self):
         pass
+
+    def construct_df(self):
+        pass
+
+    def refresh_table(self):
+        # refresh the table whenever data frame has been changed
+        self.model = tableModel(self.df)
+        self.tableView.setModel(self.model)
+
+    def add_df(self, df):
+        # adding new data into the dataframe
+        tempDf = self.df  # store the current data frame into a temp variable
+        self.df = tempDf.append(df, ignore_index=True)  # adding new row into the dataframe
+        self.refresh_table()
