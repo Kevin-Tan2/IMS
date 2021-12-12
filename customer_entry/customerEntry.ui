@@ -716,7 +716,7 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <widget class="QTableView" name="customerIDTable">
+       <widget class="QTableView" name="tableView">
         <property name="geometry">
          <rect>
           <x>10</x>
