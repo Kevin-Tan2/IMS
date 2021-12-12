@@ -7,12 +7,12 @@ from masterMaintenance import MasterMaintenance
 class CustomerEntry(MasterMaintenance):
 
     def __init__(self):
-        uiFilePath = "customerEntry.ui"
-        csvFilePath = "customerList.csv"
-        columnNames = ['Customer No', 'Customer ID', 'Customer Name', 'Addr1', 'Addr2', 'Addr3', 'Addr4',
-                       'Tel No', 'GST Reg', 'Fax No', 'Account No']
+        self.uiFilePath = "customerEntry.ui"
+        self.csvFilePath = "customerList.csv"
+        self.columnNames = ['Customer No', 'Customer ID', 'Customer Name', 'Addr1', 'Addr2', 'Addr3', 'Addr4',
+                            'Tel No', 'GST Reg', 'Fax No', 'Account No']
 
-        super().__init__(uiFilePath, csvFilePath, columnNames)
+        super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
 
     def reset_entries(self):
         # clears the line entries
@@ -49,6 +49,9 @@ class CustomerEntry(MasterMaintenance):
 
     def add_df(self):
         super().add_df(self.construct_df())
+
+    def save_csv(self):
+        super().save_csv(self.csvFilePath)
 
 
 if __name__ == "__main__":

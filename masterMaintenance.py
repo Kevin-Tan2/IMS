@@ -32,6 +32,7 @@ class MasterMaintenance(QtWidgets.QMainWindow):
         self.resetButton.clicked.connect(self.reset_entries)
         self.addButton.clicked.connect(self.add_df)
         self.deleteButton.clicked.connect(self.delete_row)
+        self.saveButton.clicked.connect(self.save_csv)
 
     def reset_entries(self):
         pass
@@ -63,3 +64,8 @@ class MasterMaintenance(QtWidgets.QMainWindow):
             self.df = tempDf.drop(index.row())  # delete each selected row from the dataframe
 
         self.refresh_table()
+
+    def save_csv(self, csvFilePath):
+        self.refresh_table()
+        # save the dataframe into .csv file (ignoring the index)
+        self.df.to_csv(csvFilePath, index=False)
