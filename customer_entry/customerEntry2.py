@@ -14,11 +14,24 @@ class CustomerEntry(MasterMaintenance):
 
         super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
 
+        # sort by Customer ID ascending
+        self.df = self.df.sort_values(by='Customer ID')
+
         # hide columns from column 3 to maximum number of column
         for column_hidden in range(3, self.df.shape[1]):
             self.tableView.hideColumn(column_hidden)
 
     def refresh_table(self):
+        # sort by Customer ID ascending
+        self.df = self.df.sort_values(by='Customer ID')
+
+        # reset the index in numerical order
+        self.df = self.df.reset_index(drop=True)
+
+        # autofill the customer no
+        for i in range(0, self.df.shape[0]):
+            self.df.at[i, "Customer No"] = int(i + 1)
+
         super().refresh_table()
 
         # self.df.shape[0] is the
