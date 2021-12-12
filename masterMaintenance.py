@@ -16,3 +16,14 @@ class MasterMaintenance(QtWidgets.QMainWindow):
 
         # load ui file
         loadUi(uiFilePath, self)
+
+        # create data frame from csv file or column names
+        self.df = load_csv(csvFilePath, self.columnNames)
+
+        # create table model based of the object data frame
+        self.model = tableModel(self.df)
+
+        # create table view model
+        self.tableView.horizontalHeader().setStretchLastSection(True)  # to stretch the header size to fit
+        self.tableView.setSelectionBehavior(QAbstractItemView.SelectRows)  # to select entire row instead of cell
+        self.tableView.setModel(self.model)  # to set the proxy model into the table view
