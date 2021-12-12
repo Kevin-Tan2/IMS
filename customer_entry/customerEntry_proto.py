@@ -37,13 +37,13 @@ class CustomerEntry(QtWidgets.QMainWindow):
         self.proxy.setFilterKeyColumn(-1)  # -1 search all columns
 
         # table view model
-        self.customerIDTable.horizontalHeader().setStretchLastSection(True)  # to stretch the header size to fit
+        self.tableView.horizontalHeader().setStretchLastSection(True)  # to stretch the header size to fit
         # self.customerIDTable.horizontalHeader().setStyleSheet("background-color: white;")
-        self.customerIDTable.setSelectionBehavior(QAbstractItemView.SelectRows)  # to select entire row instead of cell
-        self.customerIDTable.setModel(self.proxy)  # to set the proxy model into the table view
+        self.tableView.setSelectionBehavior(QAbstractItemView.SelectRows)  # to select entire row instead of cell
+        self.tableView.setModel(self.proxy)  # to set the proxy model into the table view
 
         for column_hidden in range(3, self._df.shape[1]):
-            self.customerIDTable.hideColumn(column_hidden)  # hide other columns except Customer ID and Name
+            self.tableView.hideColumn(column_hidden)  # hide other columns except Customer ID and Name
 
         # event responses
         self.resetButton.clicked.connect(self.reset_entries)
@@ -89,11 +89,11 @@ class CustomerEntry(QtWidgets.QMainWindow):
         # refresh the table whenever data frame has been changed
         self._model = tableModel(self._df)
         self.proxy.setSourceModel(self._model)
-        self.customerIDTable.setModel(self.proxy)
+        self.tableView.setModel(self.proxy)
 
         # self._df.shape[0] is the
         for column_hidden in range(3, self._df.shape[1]):
-            self.customerIDTable.hideColumn(column_hidden)
+            self.tableView.hideColumn(column_hidden)
 
     def construct_df(self):
         # construct a new data frame from the QLineEdits
@@ -138,7 +138,7 @@ class CustomerEntry(QtWidgets.QMainWindow):
         # delete the selected row
         index_list = []  # to store list of selected rows
 
-        for model_index in self.customerIDTable.selectionModel().selectedRows():
+        for model_index in self.tableView.selectionModel().selectedRows():
             index = QtCore.QPersistentModelIndex(model_index)
             index_list.append(index)  # append the selected indices into index_list
 
