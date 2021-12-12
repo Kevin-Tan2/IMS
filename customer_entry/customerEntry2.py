@@ -14,6 +14,20 @@ class CustomerEntry(MasterMaintenance):
 
         super().__init__(uiFilePath, csvFilePath, columnNames)
 
+    def reset_entries(self):
+        # clears the line entries
+        self.inputCustomerID.clear()
+        self.inputCustomerNo.clear()
+        self.inputName.clear()
+        self.inputAddrOne.clear()
+        self.inputAddrTwo.clear()
+        self.inputAddrThree.clear()
+        self.inputAddrFour.clear()
+        self.inputTelephone.clear()
+        self.inputGST.clear()
+        self.inputFax.clear()
+        self.inputAccountNo.clear()
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
