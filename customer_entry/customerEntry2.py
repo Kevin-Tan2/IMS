@@ -14,6 +14,17 @@ class CustomerEntry(MasterMaintenance):
 
         super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
 
+        # hide columns from column 3 to maximum number of column
+        for column_hidden in range(3, self.df.shape[1]):
+            self.tableView.hideColumn(column_hidden)
+
+    def refresh_table(self):
+        super().refresh_table()
+
+        # self.df.shape[0] is the
+        for column_hidden in range(3, self.df.shape[1]):
+            self.tableView.hideColumn(column_hidden)
+
     def reset_entries(self):
         # clears the line entries
         self.inputCustomerID.clear()
