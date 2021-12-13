@@ -5,47 +5,24 @@ from PyQt5.QtWidgets import QHeaderView, QAbstractItemView
 from PyQt5.QtCore import QAbstractTableModel, QSortFilterProxyModel, Qt
 import pandas as pd
 from tableViewModel import tableModel, load_csv
+from masterMaintenance import MasterMaintenance
 import os.path
 from pathlib import Path
 
 
-class ContractorEntry(QtWidgets.QMainWindow):
+class ContractorEntry(MasterMaintenance):
     def __init__(self):
-        super(ContractorEntry, self).__init__()
 
-        # load UI
-        loadUi("./contractor_entry/contractorEntry.ui", self)
+        self.uiFilePath = "./contractor_entry/contractorEntry.ui"
+        self.csvFilePath = "./contractor_entry/contractorList.csv"
 
         # create headers for .csv use
-        self._columnNames = ['Division', 'Contractor ID', 'Contractor Name', 'Employee No', 'Contractor Type']
+        self.columnNames = ['Division', 'Contractor ID', 'Contractor Name', 'Employee No', 'Contractor Type']
 
-        # load contractorList.csv
-        self._df = load_csv("./contractor_entry/contractorList.csv", self._columnNames)
-
-        # create tableModel instance
-        self._model = tableModel(self._df)
-
-        # filter proxy model for search functionality
-        self.proxy = QtCore.QSortFilterProxyModel(self)
-        self.proxy.setSourceModel(self._model)
-        self.proxy.setFilterCaseSensitivity(Qt.CaseInsensitive)  # case insensitivity
-        self.proxy.setFilterKeyColumn(-1)  # -1 search all columns
-
-        # table view model
-        self.contractorTable.horizontalHeader().setStretchLastSection(True)  # to stretch the header size to fit
-        self.contractorTable.setSelectionBehavior(QAbstractItemView.SelectRows)  # to select entire row instead of cell
-        self.contractorTable.setModel(self.proxy)  # to set the proxy model into the table view
-
-        # event response
-        self.resetButton.clicked.connect(self.reset_entries)
-        self.addButton.clicked.connect(self.add_df)
-        self.saveButton.clicked.connect(self.save_csv)
-        self.deleteButton.clicked.connect(self.delete_row)
-        self.searchBar.textChanged.connect(self.search_query)
-        self.closeButton.clicked.connect(self.close)
+        super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
 
     def reset_entries(self):
-
+        # clear out the entries
         self.contractorID.clear()
         self.contractorName.clear()
         self.employeeNo.clear()
@@ -70,41 +47,11 @@ class ContractorEntry(QtWidgets.QMainWindow):
                            'Contractor Type': [contractType]})
         return df
 
-    def refresh_table(self):
-        # refresh the table whenever data frame has been changed
-        self._model = tableModel(self._df)
-        self.proxy.setSourceModel(self._model)
-        self.contractorTable.setModel(self.proxy)
-
     def add_df(self):
-        # adding new data into the dataframe
-        df1 = self._df  # store the current data frame into a temp variable
-        df2 = self.construct_df()
-        self._df = df1.append(df2, ignore_index=True)  # adding new row into the dataframe
-        self.refresh_table()
+        super().add_df(self.construct_df())
 
     def save_csv(self):
-        # save the dataframe into .csv file (ignoring the index)
-        self._df.to_csv("./contractor_entry/contractorList.csv", index=False)
-
-    def delete_row(self):
-        # delete the selected row
-        index_list = []  # to store list of selected rows
-
-        for model_index in self.contractorTable.selectionModel().selectedRows():
-            index = QtCore.QPersistentModelIndex(model_index)
-            index_list.append(index)  # append the selected indices into index_list
-
-        for index in index_list:  # delete all selected rows
-            tempDf = self._df
-            self._df = tempDf.drop(index.row())  # delete each selected row from the dataframe
-
-        self._df = self._df.reset_index(drop=True)  # reset the index in numerical order
-        self.refresh_table()
-
-    def search_query(self):
-        # to filter out data that does not match with the search bar
-        self.proxy.setFilterFixedString(self.searchBar.text())
+        super().save_csv(self.csvFilePath)
 
 
 if __name__ == "__main__":
