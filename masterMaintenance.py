@@ -48,6 +48,9 @@ class MasterMaintenance(QtWidgets.QMainWindow):
         pass
 
     def refresh_table(self):
+        # reset the index in numerical order
+        self.df = self.df.reset_index(drop=True)
+
         # refresh the table whenever data frame has been changed
         self.model = tableModel(self.df)
         self.proxy.setSourceModel(self.model)
