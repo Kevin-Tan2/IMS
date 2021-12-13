@@ -37,31 +37,7 @@ class RWSupplier(MasterMaintenance):
         return df
 
     def add_df(self):
-        # adding new data into the dataframe
-        df1 = self.df  # store the current data frame into a temp variable
-        df2 = self.construct_df()
-        self.df = df1.append(df2, ignore_index=True)  # adding new row into the dataframe
-        self.refresh_table()
-
-    def delete_row(self):
-        # delete the selected row
-        index_list = []  # to store list of selected rows
-
-        for model_index in self.tableView.selectionModel().selectedRows():
-            index = QtCore.QPersistentModelIndex(model_index)
-            index_list.append(index)  # append the selected indices into index_list
-
-        for index in index_list:  # delete all selected rows
-            tempDf = self.df
-            self.df = tempDf.drop(index.row())  # delete each selected row from the dataframe
-
-        self.df = self.df.reset_index(drop=True)  # reset the index in numerical order
-        self.refresh_table()
+        super().add_df(self.construct_df())
 
     def save_csv(self):
-        # save the dataframe into .csv file (ignoring the index)
-        self.df.to_csv("./rw_supplier/rwSupplierList.csv", index=False)
-
-    def search_query(self):
-        # to filter out data that does not match with the search bar
-        self.proxy.setFilterFixedString(self.searchBar.text())
+        super().save_csv(self.csvFilePath)
