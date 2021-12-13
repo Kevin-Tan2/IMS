@@ -136,7 +136,7 @@ border-right: 1px solid black;
                <x>0</x>
                <y>0</y>
                <width>210</width>
-               <height>729</height>
+               <height>749</height>
               </rect>
              </property>
              <attribute name="label">
@@ -764,8 +764,8 @@ border-color: rgb(85, 0, 255);
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>210</width>
-               <height>729</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <attribute name="label">
@@ -934,7 +934,7 @@ border-color: rgb(85, 0, 255);
              </font>
             </property>
             <property name="currentIndex">
-             <number>6</number>
+             <number>7</number>
             </property>
             <widget class="CustomerEntry" name="customerEntry"/>
             <widget class="ContractorEntry" name="contractorEntry"/>
@@ -943,6 +943,7 @@ border-color: rgb(85, 0, 255);
             <widget class="KDCharge" name="kdCharge"/>
             <widget class="PTCharge" name="ptCharge"/>
             <widget class="ContractorPriceOne" name="contractorPriceOne"/>
+            <widget class="ContractorPriceTwo" name="contractorPriceTwo"/>
            </widget>
           </item>
          </layout>
@@ -961,7 +962,7 @@ border-color: rgb(85, 0, 255);
      <x>0</x>
      <y>0</y>
      <width>1239</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -1008,6 +1009,12 @@ border-color: rgb(85, 0, 255);
    <class>ContractorPriceOne</class>
    <extends>QWidget</extends>
    <header>contractor_price/contractorPriceOne</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ContractorPriceTwo</class>
+   <extends>QWidget</extends>
+   <header>contractor_price/contractorPriceTwo</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
