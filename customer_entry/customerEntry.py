@@ -7,8 +7,8 @@ from masterMaintenance import MasterMaintenance
 class CustomerEntry(MasterMaintenance):
 
     def __init__(self):
-        self.uiFilePath = "customerEntry.ui"
-        self.csvFilePath = "customerList.csv"
+        self.uiFilePath = "./customer_entry/customerEntry.ui"
+        self.csvFilePath = "./customer_entry/customerList.csv"
         self.columnNames = ['Customer No', 'Customer ID', 'Customer Name', 'Addr1', 'Addr2', 'Addr3', 'Addr4',
                             'Tel No', 'GST Reg', 'Fax No', 'Account No']
 
