@@ -1,6 +1,7 @@
 import sys
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QAbstractItemView
+from PyQt5.QtCore import Qt
 from masterMaintenance import MasterMaintenance
 from tableViewModel import tableModel, load_csv
 import pandas as pd
@@ -26,15 +27,22 @@ class ContractorPriceOne(MasterMaintenance):
 
         self.model2 = tableModel(self.df2)
 
+        # create proxy model to enable search function
+        self.proxy2 = QtCore.QSortFilterProxyModel(self)
+        self.proxy2.setSourceModel(self.model2)
+        self.proxy2.setFilterCaseSensitivity(Qt.CaseInsensitive)  # case insensitivity
+        self.proxy2.setFilterKeyColumn(-1)  # -1 search all columns
+
         self.dryTableView.horizontalHeader().setStretchLastSection(True)  # to stretch the header size to fit
         self.dryTableView.setSelectionBehavior(QAbstractItemView.SelectRows)  # to select entire row instead of cell
-        self.dryTableView.setModel(self.model2)  # to set the proxy model into the table view
+        self.dryTableView.setModel(self.proxy2)  # to set the proxy model into the table view
 
         # event responses for table dry wood
         self.dryResetBtn.clicked.connect(lambda: self.reset_entries(1))
         self.dryAddBtn.clicked.connect(lambda: self.add_df(1))
         self.dryDeleteBtn.clicked.connect(self.delete_row)
         self.drySaveBtn.clicked.connect(lambda: self.save_csv(1))
+        self.drySearchBar.textChanged.connect(self.search_dry_query)
 
     def reset_entries(self, tableNo=0):
 
@@ -58,7 +66,8 @@ class ContractorPriceOne(MasterMaintenance):
 
         elif index == 1:
             self.model2 = tableModel(self.dfArray[index])
-            self.dryTableView.setModel(self.model2)
+            self.proxy2.setSourceModel(self.model2)
+            self.dryTableView.setModel(self.proxy2)
 
     def construct_df(self, index):
         # index 0 means wet wood, index 1 means dry wood
@@ -82,3 +91,7 @@ class ContractorPriceOne(MasterMaintenance):
         self.refresh_table(index)
         # save the dataframe into .csv file (ignoring the index)
         self.dfArray[index].to_csv(self.csvFilePathArray[index], index=False)
+
+    def search_dry_query(self):
+        # to filter out data that does not match with the search bar
+        self.proxy2.setFilterFixedString(self.drySearchBar.text())
