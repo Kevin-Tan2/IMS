@@ -610,18 +610,6 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="saveButton">
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Save</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
                  <widget class="QPushButton" name="deleteButton">
                   <property name="font">
                    <font>
@@ -630,6 +618,25 @@
                   </property>
                   <property name="text">
                    <string>Delete</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="addButton">
+                  <property name="text">
+                   <string>Add</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="saveButton">
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Save</string>
                   </property>
                  </widget>
                 </item>
