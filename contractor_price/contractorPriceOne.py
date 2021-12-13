@@ -9,14 +9,19 @@ import pandas as pd
 
 class ContractorPriceOne(MasterMaintenance):
 
-    def __init__(self):
-        self.uiFilePath = "./contractor_price/contractorPrice.ui"
-        csvFilePathOne = "./contractor_price/contractorPriceWetWood.csv"
-        csvFilePathTwo = "./contractor_price/contractorPriceDryWood.csv"
+    def __init__(self, uiFilePath="./contractor_price/contractorPrice.ui",
+                 csvFilePathOne="./contractor_price/contractorPriceWetWood.csv",
+                 csvFilePathTwo="./contractor_price/contractorPriceDryWood.csv",
+                 columnNames=None):
+
+        if columnNames is None:
+            columnNames = ['Size1', 'Size2', 'Length', 'Price']
+
+        self.uiFilePath = uiFilePath
 
         self.csvFilePathArray = [csvFilePathOne, csvFilePathTwo]
 
-        self.columnNames = ['Size1', 'Size2', 'Length', 'Price']
+        self.columnNames = columnNames
 
         super().__init__(self.uiFilePath, csvFilePathOne, self.columnNames)
 
@@ -40,7 +45,7 @@ class ContractorPriceOne(MasterMaintenance):
         # event responses for table dry wood
         self.dryResetBtn.clicked.connect(lambda: self.reset_entries(1))
         self.dryAddBtn.clicked.connect(lambda: self.add_df(1))
-        self.dryDeleteBtn.clicked.connect(self.delete_row)
+        self.dryDeleteBtn.clicked.connect(lambda: self.delete_row(1))
         self.drySaveBtn.clicked.connect(lambda: self.save_csv(1))
         self.drySearchBar.textChanged.connect(self.search_dry_query)
 
@@ -95,3 +100,23 @@ class ContractorPriceOne(MasterMaintenance):
     def search_dry_query(self):
         # to filter out data that does not match with the search bar
         self.proxy2.setFilterFixedString(self.drySearchBar.text())
+
+    def delete_row(self, tableNo=0):
+        # delete the selected row
+        index_list = []  # to store list of selected rows
+
+        if tableNo == 0:
+            table = self.tableView
+
+        elif tableNo == 1:
+            table = self.dryTableView
+
+        for model_index in table.selectionModel().selectedRows():
+            index = QtCore.QPersistentModelIndex(model_index)
+            index_list.append(index)  # append the selected indices into index_list
+
+        for index in index_list:  # delete all selected rows
+            tempDf = self.dfArray[tableNo]
+            self.dfArray[tableNo] = tempDf.drop(index.row())  # delete each selected row from the dataframe
+
+        self.refresh_table(tableNo)
