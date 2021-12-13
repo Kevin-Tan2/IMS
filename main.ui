@@ -920,15 +920,21 @@ border-color: rgb(85, 0, 255);
             <zorder>frame_6</zorder>
            </widget>
           </item>
-          <item>
+          <item alignment="Qt::AlignHCenter">
            <widget class="QStackedWidget" name="stackedWidget">
+            <property name="minimumSize">
+             <size>
+              <width>1211</width>
+              <height>708</height>
+             </size>
+            </property>
             <property name="font">
              <font>
               <pointsize>12</pointsize>
              </font>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>6</number>
             </property>
             <widget class="CustomerEntry" name="customerEntry"/>
             <widget class="ContractorEntry" name="contractorEntry"/>
@@ -936,6 +942,7 @@ border-color: rgb(85, 0, 255);
             <widget class="UserMaintenance" name="userMaintenance"/>
             <widget class="KDCharge" name="kdCharge"/>
             <widget class="PTCharge" name="ptCharge"/>
+            <widget class="ContractorPriceOne" name="contractorPriceOne"/>
            </widget>
           </item>
          </layout>
@@ -995,6 +1002,12 @@ border-color: rgb(85, 0, 255);
    <class>PTCharge</class>
    <extends>QWidget</extends>
    <header>pt_charge/ptCharge</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ContractorPriceOne</class>
+   <extends>QWidget</extends>
+   <header>contractor_price/contractorPriceOne</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
