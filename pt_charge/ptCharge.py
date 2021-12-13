@@ -5,33 +5,40 @@ from PyQt5.QtWidgets import QHeaderView, QAbstractItemView
 from PyQt5.QtCore import QAbstractTableModel, QSortFilterProxyModel, Qt
 import pandas as pd
 from tableViewModel import tableModel, load_csv
+from masterMaintenance import MasterMaintenance
 import os.path
 from pathlib import Path
 
 
-class PTCharge(QtWidgets.QMainWindow):
+class PTCharge(MasterMaintenance):
 
     def __init__(self):
-        super().__init__()
-
-        uiFilePath = "./pt_charge/ptCharge.ui"
-        csvFilePath = "./pt_charge/ptChargeList.csv"
-
-        # load the ui file
-        loadUi(uiFilePath, self)
+        self.uiFilePath = "./pt_charge/ptCharge.ui"
+        self.csvFilePath = "./pt_charge/ptChargeList.csv"
 
         # load the csv file as dataframe
-        self._columnNames = ['Customer ID', 'Price']
-        self._df = load_csv(csvFilePath, self._columnNames)
-        self._df = self._df.sort_values('Customer ID')
+        self.columnNames = ['Customer ID', 'Price']
 
-        # table model
-        self._model = tableModel(self._df)
+        super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
 
-        # table view model
-        self.tableView.horizontalHeader().setStretchLastSection(True)  # to stretch the header size to fit
-        self.tableView.setSelectionBehavior(QAbstractItemView.SelectRows)  # to select entire row instead of cell
-        self.tableView.setModel(self._model)  # to set the proxy model into the table view
+    def reset_entries(self):
+        # clears the line entries
+        self.customerID.clear()
+        self.price.clear()
+
+    def construct_df(self):
+        customerID = str(self.customerID.text())
+        price = str(self.price.text())
+
+        df = pd.DataFrame({'Customer ID': [customerID],
+                           'Price': [price]})
+        return df
+
+    def add_df(self):
+        super().add_df(self.construct_df())
+
+    def save_csv(self):
+        super().save_csv(self.csvFilePath)
 
 
 if __name__ == "__main__":
