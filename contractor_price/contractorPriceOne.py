@@ -22,6 +22,8 @@ class ContractorPriceOne(MasterMaintenance):
         # create second dataframe for the second table
         self.df2 = load_csv(csvFilePathTwo, self.columnNames)
 
+        self.dfArray = [self.df, self.df2]
+
         self.model2 = tableModel(self.df2)
 
         self.dryTableView.horizontalHeader().setStretchLastSection(True)  # to stretch the header size to fit
@@ -50,10 +52,12 @@ class ContractorPriceOne(MasterMaintenance):
 
     def refresh_table(self, index=0):
         if index == 0:
-            super().refresh_table()
+            self.model = tableModel(self.dfArray[index])
+            self.proxy.setSourceModel(self.model)
+            self.tableView.setModel(self.proxy)
 
         elif index == 1:
-            self.model2 = tableModel(self.df2)
+            self.model2 = tableModel(self.dfArray[index])
             self.dryTableView.setModel(self.model2)
 
     def construct_df(self, index):
@@ -69,13 +73,12 @@ class ContractorPriceOne(MasterMaintenance):
         return df
 
     def add_df(self, index=0):
-        if index == 0:
-            super().add_df(self.construct_df(0))
-        elif index == 1:
-            # adding new data into the dataframe
-            tempDf = self.df2  # store the current data frame into a temp variable
-            self.df2 = tempDf.append(self.construct_df(1), ignore_index=True)  # adding new row into the dataframe
-            self.refresh_table(1)
+        # adding new data into the dataframe
+        tempDf = self.dfArray[index]  # store the current data frame into a temp variable
+        self.dfArray[index] = tempDf.append(self.construct_df(index), ignore_index=True)  # append into the dataframe
+        self.refresh_table(index)
 
     def save_csv(self, index=0):
-        super().save_csv(self.csvFilePathList[index])
+        self.refresh_table(index)
+        # save the dataframe into .csv file (ignoring the index)
+        self.dfArray[index].to_csv(self.csvFilePathArray[index], index=False)
