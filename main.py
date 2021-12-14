@@ -35,6 +35,7 @@ class MasterMaintenance(QtWidgets.QMainWindow):
         self.contPriceOneBtn.clicked.connect(lambda: self.display(6))
         self.contPriceTwoBtn.clicked.connect(lambda: self.display(7))
         self.contPriceFJBtn.clicked.connect(lambda: self.display(8))
+        self.fwContChargeBtn.clicked.connect(lambda: self.display(9))
 
         # set event response for side bar menu button
         self.sideMenuBtn.clicked.connect(self.toggleMenu)
