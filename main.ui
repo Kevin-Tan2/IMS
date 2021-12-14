@@ -922,7 +922,7 @@ border-color: rgb(85, 0, 255);
                    </font>
                   </property>
                   <property name="currentIndex">
-                   <number>9</number>
+                   <number>10</number>
                   </property>
                   <widget class="CustomerEntry" name="customerEntry"/>
                   <widget class="ContractorEntry" name="contractorEntry"/>
@@ -934,6 +934,7 @@ border-color: rgb(85, 0, 255);
                   <widget class="ContractorPriceTwo" name="contractorPriceTwo"/>
                   <widget class="ContractorPriceFJ" name="contractorPriceFJ"/>
                   <widget class="FWContCharges" name="fwContractorPrice"/>
+                  <widget class="RWChargeDuration" name="rwChargeDuration"/>
                  </widget>
                 </item>
                </layout>
@@ -1021,6 +1022,12 @@ border-color: rgb(85, 0, 255);
    <class>FWContCharges</class>
    <extends>QWidget</extends>
    <header>fw_contractor_charges/fwContCharges</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RWChargeDuration</class>
+   <extends>QWidget</extends>
+   <header>rw_charge_duration/rwChargeDuration</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
