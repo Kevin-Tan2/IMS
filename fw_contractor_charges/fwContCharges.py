@@ -13,3 +13,6 @@ class FWContCharges(MasterMaintenance):
         # sort by Customer ID ascending
         self.df = self.df.sort_values(by='Length')
 
+    def reset_entries(self):
+        self.length.clear()
+        self.charges.clear()
