@@ -12,3 +12,7 @@ class FWRWSpecies(MasterMaintenance):
         self.columnNames = ['Species', 'Description']
 
         super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
+
+    def reset_entries(self):
+        self.species.clear()
+        self.description.clear()
