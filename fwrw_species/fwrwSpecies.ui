@@ -145,7 +145,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="supplierID">
+              <widget class="QLineEdit" name="species">
                <property name="font">
                 <font>
                  <weight>50</weight>
@@ -215,7 +215,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="supplierName">
+              <widget class="QLineEdit" name="description">
                <property name="font">
                 <font>
                  <weight>50</weight>
