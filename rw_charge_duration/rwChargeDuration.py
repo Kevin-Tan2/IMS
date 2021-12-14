@@ -11,3 +11,8 @@ class RWChargeDuration(MasterMaintenance):
         self.columnNames = ['Range of Size', 'Expected Day']
 
         super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
+
+    def reset_entries(self):
+
+        self.size.clear()
+        self.duration.clear()
