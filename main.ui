@@ -848,10 +848,7 @@ border-color: rgb(85, 0, 255);
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_3">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
+               <layout class="QFormLayout" name="formLayout">
                 <property name="leftMargin">
                  <number>0</number>
                 </property>
@@ -864,7 +861,7 @@ border-color: rgb(85, 0, 255);
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item>
+                <item row="0" column="0">
                  <widget class="QPushButton" name="sideMenuBtn">
                   <property name="minimumSize">
                    <size>
@@ -890,16 +887,6 @@ border-color: rgb(85, 0, 255);
                     <width>33</width>
                     <height>33</height>
                    </size>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="label">
-                  <property name="text">
-                   <string>A1 Customer Entry</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -935,7 +922,7 @@ border-color: rgb(85, 0, 255);
                    </font>
                   </property>
                   <property name="currentIndex">
-                   <number>8</number>
+                   <number>9</number>
                   </property>
                   <widget class="CustomerEntry" name="customerEntry"/>
                   <widget class="ContractorEntry" name="contractorEntry"/>
@@ -946,6 +933,7 @@ border-color: rgb(85, 0, 255);
                   <widget class="ContractorPriceOne" name="contractorPriceOne"/>
                   <widget class="ContractorPriceTwo" name="contractorPriceTwo"/>
                   <widget class="ContractorPriceFJ" name="contractorPriceFJ"/>
+                  <widget class="FWContCharges" name="fwContractorPrice"/>
                  </widget>
                 </item>
                </layout>
@@ -1027,6 +1015,12 @@ border-color: rgb(85, 0, 255);
    <class>ContractorPriceFJ</class>
    <extends>QWidget</extends>
    <header>contractor_price/contractorPriceFJ</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FWContCharges</class>
+   <extends>QWidget</extends>
+   <header>fw_contractor_charges/fwContCharges</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
