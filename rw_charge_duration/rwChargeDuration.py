@@ -37,3 +37,6 @@ class RWChargeDuration(MasterMaintenance):
 
     def add_df(self):
         super().add_df(self.construct_df())
+
+    def save_csv(self):
+        super().save_csv(self.csvFilePath)
