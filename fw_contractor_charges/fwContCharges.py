@@ -19,6 +19,12 @@ class FWContCharges(MasterMaintenance):
         self.length.clear()
         self.charges.clear()
 
+    def refresh_table(self):
+        # sort by Customer ID ascending
+        self.df = self.df.sort_values(by='Length')
+
+        super().refresh_table()
+
     def construct_df(self):
         length = str(self.length.text())
         charges = str(self.charges.text())
