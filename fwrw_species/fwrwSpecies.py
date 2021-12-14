@@ -16,3 +16,15 @@ class FWRWSpecies(MasterMaintenance):
     def reset_entries(self):
         self.species.clear()
         self.description.clear()
+
+    def construct_df(self):
+        # construct a new data frame from the QLineEdits
+        species = str(self.species.text())
+        description = str(self.description.text())
+
+        df = pd.DataFrame({'Species': [species], 'Description': [description]})
+
+        return df
+
+    def add_df(self):
+        super().add_df(self.construct_df())
