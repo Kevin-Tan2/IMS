@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1301</width>
-    <height>947</height>
+    <width>1079</width>
+    <height>780</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1301</width>
-    <height>947</height>
+    <width>1079</width>
+    <height>780</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -136,7 +136,7 @@ border-right: 1px solid black;
                <x>0</x>
                <y>0</y>
                <width>210</width>
-               <height>812</height>
+               <height>645</height>
               </rect>
              </property>
              <attribute name="label">
@@ -765,7 +765,7 @@ border-color: rgb(85, 0, 255);
                <x>0</x>
                <y>0</y>
                <width>210</width>
-               <height>812</height>
+               <height>645</height>
               </rect>
              </property>
              <attribute name="label">
@@ -842,6 +842,12 @@ border-color: rgb(85, 0, 255);
                  <height>50</height>
                 </size>
                </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>50</height>
+                </size>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
@@ -897,8 +903,8 @@ border-color: rgb(85, 0, 255);
               <widget class="QFrame" name="frame_7">
                <property name="minimumSize">
                 <size>
-                 <width>1234</width>
-                 <height>880</height>
+                 <width>1000</width>
+                 <height>600</height>
                 </size>
                </property>
                <property name="frameShape">
@@ -912,8 +918,8 @@ border-color: rgb(85, 0, 255);
                  <widget class="QStackedWidget" name="stackedWidget">
                   <property name="minimumSize">
                    <size>
-                    <width>1211</width>
-                    <height>708</height>
+                    <width>1000</width>
+                    <height>600</height>
                    </size>
                   </property>
                   <property name="font">
@@ -956,7 +962,7 @@ border-color: rgb(85, 0, 255);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1301</width>
+     <width>1079</width>
      <height>26</height>
     </rect>
    </property>
