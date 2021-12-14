@@ -14,6 +14,8 @@ class LoginPage(QtWidgets.QDialog):
         self.inputPass.setEchoMode(QtWidgets.QLineEdit.Password)  # hide the password
         self.loginButton.clicked.connect(self.check_password)
         self._csv = csvFilePath
+        self.inputUser.setText("alpha")
+        self.inputPass.setText("123")
 
     def check_password(self):
         # create a message box to inform the user if the login succeed or failed
