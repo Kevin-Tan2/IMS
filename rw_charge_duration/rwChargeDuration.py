@@ -16,3 +16,15 @@ class RWChargeDuration(MasterMaintenance):
 
         self.size.clear()
         self.duration.clear()
+
+    def construct_df(self):
+
+        size = str(self.size.text())
+        duration = str(self.duration.text())
+
+        df = pd.DataFrame({'Range of Size': [size], 'Expected Day': [duration]})
+
+        return df
+
+    def add_df(self):
+        super().add_df(self.construct_df())
