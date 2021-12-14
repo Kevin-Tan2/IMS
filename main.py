@@ -15,6 +15,7 @@ from pathlib import Path
 class MasterMaintenance(QtWidgets.QMainWindow):
 
     def __init__(self):
+
         super().__init__()
 
         # load the main.ui
@@ -33,6 +34,7 @@ class MasterMaintenance(QtWidgets.QMainWindow):
         self.ptChargeBtn.clicked.connect(lambda: self.display(5))
         self.contPriceOneBtn.clicked.connect(lambda: self.display(6))
         self.contPriceTwoBtn.clicked.connect(lambda: self.display(7))
+        self.contPriceFJBtn.clicked.connect(lambda: self.display(8))
 
         # set event response for side bar menu button
         self.sideMenuBtn.clicked.connect(self.toggleMenu)

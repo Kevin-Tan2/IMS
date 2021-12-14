@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1239</width>
-    <height>864</height>
+    <width>1301</width>
+    <height>947</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1005</width>
-    <height>687</height>
+    <width>1301</width>
+    <height>947</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -136,7 +136,7 @@ border-right: 1px solid black;
                <x>0</x>
                <y>0</y>
                <width>210</width>
-               <height>749</height>
+               <height>812</height>
               </rect>
              </property>
              <attribute name="label">
@@ -377,7 +377,7 @@ border-color: rgb(85, 0, 255);
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="contPriceFjBtn">
+                  <widget class="QPushButton" name="contPriceFJBtn">
                    <property name="minimumSize">
                     <size>
                      <width>80</width>
@@ -764,8 +764,8 @@ border-color: rgb(85, 0, 255);
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>100</width>
-               <height>30</height>
+               <width>210</width>
+               <height>812</height>
               </rect>
              </property>
              <attribute name="label">
@@ -781,8 +781,8 @@ border-color: rgb(85, 0, 255);
         <widget class="QFrame" name="frame_4">
          <property name="minimumSize">
           <size>
-           <width>972</width>
-           <height>664</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="frameShape">
@@ -791,7 +791,7 @@ border-color: rgb(85, 0, 255);
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
           <property name="leftMargin">
            <number>0</number>
           </property>
@@ -808,7 +808,7 @@ border-color: rgb(85, 0, 255);
            <widget class="QFrame" name="frame_5">
             <property name="minimumSize">
              <size>
-              <width>970</width>
+              <width>0</width>
               <height>52</height>
              </size>
             </property>
@@ -818,23 +818,23 @@ border-color: rgb(85, 0, 255);
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <layout class="QVBoxLayout" name="verticalLayout_4">
              <property name="spacing">
-              <number>0</number>
+              <number>10</number>
              </property>
              <property name="leftMargin">
-              <number>0</number>
+              <number>10</number>
              </property>
              <property name="topMargin">
-              <number>0</number>
+              <number>10</number>
              </property>
              <property name="rightMargin">
-              <number>0</number>
+              <number>10</number>
              </property>
              <property name="bottomMargin">
-              <number>0</number>
+              <number>10</number>
              </property>
-             <item alignment="Qt::AlignLeft">
+             <item>
               <widget class="QFrame" name="frame_6">
                <property name="minimumSize">
                 <size>
@@ -848,7 +848,10 @@ border-color: rgb(85, 0, 255);
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
                 <property name="leftMargin">
                  <number>0</number>
                 </property>
@@ -861,12 +864,18 @@ border-color: rgb(85, 0, 255);
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item alignment="Qt::AlignLeft">
+                <item>
                  <widget class="QPushButton" name="sideMenuBtn">
                   <property name="minimumSize">
                    <size>
-                    <width>0</width>
-                    <height>0</height>
+                    <width>45</width>
+                    <height>41</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>45</width>
+                    <height>41</height>
                    </size>
                   </property>
                   <property name="text">
@@ -885,20 +894,12 @@ border-color: rgb(85, 0, 255);
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="sectionName">
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>14</pointsize>
-                    <weight>75</weight>
-                    <bold>true</bold>
-                   </font>
-                  </property>
+                 <widget class="QLabel" name="label">
                   <property name="text">
-                   <string>Master Maintenance</string>
+                   <string>A1 Customer Entry</string>
                   </property>
-                  <property name="margin">
-                   <number>20</number>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -907,48 +908,53 @@ border-color: rgb(85, 0, 255);
              </item>
              <item>
               <widget class="QFrame" name="frame_7">
+               <property name="minimumSize">
+                <size>
+                 <width>1234</width>
+                 <height>880</height>
+                </size>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
+               <layout class="QGridLayout" name="gridLayout">
+                <item row="0" column="0">
+                 <widget class="QStackedWidget" name="stackedWidget">
+                  <property name="minimumSize">
+                   <size>
+                    <width>1211</width>
+                    <height>708</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="currentIndex">
+                   <number>8</number>
+                  </property>
+                  <widget class="CustomerEntry" name="customerEntry"/>
+                  <widget class="ContractorEntry" name="contractorEntry"/>
+                  <widget class="RWSupplier" name="rwSupplier"/>
+                  <widget class="UserMaintenance" name="userMaintenance"/>
+                  <widget class="KDCharge" name="kdCharge"/>
+                  <widget class="PTCharge" name="ptCharge"/>
+                  <widget class="ContractorPriceOne" name="contractorPriceOne"/>
+                  <widget class="ContractorPriceTwo" name="contractorPriceTwo"/>
+                  <widget class="ContractorPriceFJ" name="contractorPriceFJ"/>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
             </layout>
-            <zorder>frame_7</zorder>
-            <zorder>frame_6</zorder>
-           </widget>
-          </item>
-          <item alignment="Qt::AlignHCenter">
-           <widget class="QStackedWidget" name="stackedWidget">
-            <property name="minimumSize">
-             <size>
-              <width>1211</width>
-              <height>708</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
-            <property name="currentIndex">
-             <number>7</number>
-            </property>
-            <widget class="CustomerEntry" name="customerEntry"/>
-            <widget class="ContractorEntry" name="contractorEntry"/>
-            <widget class="RWSupplier" name="rwSupplier"/>
-            <widget class="UserMaintenance" name="userMaintenance"/>
-            <widget class="KDCharge" name="kdCharge"/>
-            <widget class="PTCharge" name="ptCharge"/>
-            <widget class="ContractorPriceOne" name="contractorPriceOne"/>
-            <widget class="ContractorPriceTwo" name="contractorPriceTwo"/>
            </widget>
           </item>
          </layout>
-         <zorder>stackedWidget</zorder>
-         <zorder>frame_5</zorder>
         </widget>
        </item>
       </layout>
@@ -961,8 +967,8 @@ border-color: rgb(85, 0, 255);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1239</width>
-     <height>21</height>
+     <width>1301</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>
@@ -1015,6 +1021,12 @@ border-color: rgb(85, 0, 255);
    <class>ContractorPriceTwo</class>
    <extends>QWidget</extends>
    <header>contractor_price/contractorPriceTwo</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ContractorPriceFJ</class>
+   <extends>QWidget</extends>
+   <header>contractor_price/contractorPriceFJ</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
