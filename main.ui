@@ -6,14 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1079</width>
-    <height>780</height>
+    <width>1000</width>
+    <height>600</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1079</width>
-    <height>780</height>
+    <width>1000</width>
+    <height>600</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -25,28 +31,61 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <property name="styleSheet">
    <string notr="true"/>
   </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>1000</width>
+     <height>600</height>
+    </size>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QFrame" name="frame">
       <property name="minimumSize">
        <size>
-        <width>972</width>
+        <width>1000</width>
         <height>614</height>
        </size>
       </property>
       <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <property name="spacing">
-        <number>2</number>
+        <number>0</number>
        </property>
        <property name="leftMargin">
         <number>0</number>
@@ -62,6 +101,12 @@
        </property>
        <item>
         <widget class="QFrame" name="sideMenuContainer">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -77,7 +122,6 @@
          <property name="styleSheet">
           <string notr="true">QFrame{
 background-color: rgb(226, 226, 226);
-border-right: 1px solid black;
 }</string>
          </property>
          <property name="frameShape">
@@ -85,6 +129,9 @@ border-right: 1px solid black;
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
+         </property>
+         <property name="lineWidth">
+          <number>0</number>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <property name="spacing">
@@ -102,676 +149,533 @@ border-right: 1px solid black;
           <property name="bottomMargin">
            <number>0</number>
           </property>
-          <item alignment="Qt::AlignLeft">
-           <widget class="QToolBox" name="toolBox">
+          <item>
+           <widget class="QGroupBox" name="groupBox_2">
             <property name="minimumSize">
              <size>
-              <width>210</width>
+              <width>200</width>
               <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
              </size>
             </property>
             <property name="font">
              <font>
-              <pointsize>10</pointsize>
+              <family>Century Gothic</family>
+              <pointsize>15</pointsize>
+              <italic>false</italic>
+              <underline>false</underline>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <property name="currentIndex">
-             <number>0</number>
-            </property>
-            <property name="tabSpacing">
-             <number>0</number>
-            </property>
-            <widget class="QWidget" name="page">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>210</width>
-               <height>645</height>
-              </rect>
-             </property>
-             <attribute name="label">
-              <string>Master Maintenance</string>
-             </attribute>
-             <layout class="QVBoxLayout" name="verticalLayout_2">
-              <item>
-               <widget class="QFrame" name="frame_2">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border: none;
-background-color: none;
+             <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+border-style: outset;
+padding: 0px;
+border-width: 1px;
+border-radius: 0px;
+border-color: rgb(122, 122, 122);
+background-color: rgb(225, 225, 225);
+border-right: none;
+border-left: none;
+}
+QPushButton:hover{
+background-color: rgb(180, 255, 255);
+border-color: rgb(85, 0, 255);
+}
+QGroupBox{
+background-color: rgb(200, 200, 200);
+border: none
+}
 
 </string>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout">
-                 <property name="leftMargin">
-                  <number>11</number>
-                 </property>
-                 <item>
-                  <widget class="QPushButton" name="customerEntryBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>Customer Entry</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="contPriceOneBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>Contractor Price List-1</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="rwContBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>RW Contractor</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="contPriceTwoBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>Contractor Price List-2</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="rwSupplierBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>RW Supplier</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="contPriceFJBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>Contractor Price List (Fj)</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="userMaintBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>User Maintenance</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="fwContChargeBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>FW Contractor Charges</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="kdChargeBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>KD Charge</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="rwChargeDurationBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>RW Charge Duration</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="ptChargeBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>PT Charge</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="fwrwSpeciesBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>FW/RW Species</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="stockInvoiceBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>Stock Invoice</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="fwCancelNoBtn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QPushButton {
-color: rgb(0, 0, 0);
-border-style: outset;
-padding: 2px;
-border-width: 1px;
-border-radius: 2px;
-border-color: rgb(122, 122, 122);
-background-color: rgb(225, 225, 225);
-}
-QPushButton:hover{
-background-color: rgb(180, 255, 255);
-border-color: rgb(85, 0, 255);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>FW Cancel No</string>
-                   </property>
-                   <property name="default">
-                    <bool>false</bool>
-                   </property>
-                   <property name="flat">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-            <widget class="QWidget" name="page_2">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>210</width>
-               <height>645</height>
-              </rect>
+            </property>
+            <property name="title">
+             <string>    Menu    </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <property name="spacing">
+              <number>0</number>
              </property>
-             <attribute name="label">
-              <string>Forest Wood Maintenance</string>
-             </attribute>
-            </widget>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="customerEntryBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Customer Entry</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="contPriceOneBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Contractor Price List-1</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="rwContBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>RW Contractor</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="contPriceTwoBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Contractor Price List-2</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="rwSupplierBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>RW Supplier</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="contPriceFJBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Contractor Price List (Fj)</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="userMaintBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>User Maintenance</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="fwContChargeBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>FW Contractor Charges</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="kdChargeBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>KD Charge</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="rwChargeDurationBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>RW Charge Duration</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="ptChargeBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>PT Charge</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="fwrwSpeciesBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>FW/RW Species</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="stockInvoiceBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Stock Invoice</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="fwCancelNoBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>FW Cancel No</string>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
@@ -791,7 +695,13 @@ border-color: rgb(85, 0, 255);
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
+         <property name="lineWidth">
+          <number>0</number>
+         </property>
          <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="spacing">
+           <number>0</number>
+          </property>
           <property name="leftMargin">
            <number>0</number>
           </property>
@@ -820,33 +730,36 @@ border-color: rgb(85, 0, 255);
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_4">
              <property name="spacing">
-              <number>10</number>
+              <number>0</number>
              </property>
              <property name="leftMargin">
-              <number>10</number>
+              <number>0</number>
              </property>
              <property name="topMargin">
-              <number>10</number>
+              <number>0</number>
              </property>
              <property name="rightMargin">
-              <number>10</number>
+              <number>0</number>
              </property>
              <property name="bottomMargin">
-              <number>10</number>
+              <number>0</number>
              </property>
              <item>
               <widget class="QFrame" name="frame_6">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>50</height>
+                 <height>60</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
-                 <height>50</height>
+                 <height>52</height>
                 </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(200, 200, 200);</string>
                </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
@@ -854,7 +767,16 @@ border-color: rgb(85, 0, 255);
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
+               <property name="lineWidth">
+                <number>0</number>
+               </property>
                <layout class="QFormLayout" name="formLayout">
+                <property name="horizontalSpacing">
+                 <number>0</number>
+                </property>
+                <property name="verticalSpacing">
+                 <number>0</number>
+                </property>
                 <property name="leftMargin">
                  <number>0</number>
                 </property>
@@ -871,15 +793,30 @@ border-color: rgb(85, 0, 255);
                  <widget class="QPushButton" name="sideMenuBtn">
                   <property name="minimumSize">
                    <size>
-                    <width>45</width>
-                    <height>41</height>
+                    <width>50</width>
+                    <height>50</height>
                    </size>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>45</width>
-                    <height>41</height>
+                    <width>50</width>
+                    <height>50</height>
                    </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+border-style: none;
+padding: 2px;
+border-width: 0px;
+border-radius: 0px;
+border-color: rgb(122, 122, 122);
+background-color: rgb(200, 200, 200);
+}
+QPushButton:hover{
+background-color: rgb(180, 255, 255);
+border-color: rgb(85, 0, 255);
+}</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -896,14 +833,433 @@ border-color: rgb(85, 0, 255);
                   </property>
                  </widget>
                 </item>
+                <item row="0" column="1">
+                 <widget class="QStackedWidget" name="stackedTitle">
+                  <property name="font">
+                   <font>
+                    <family>Times New Roman</family>
+                    <pointsize>16</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="currentIndex">
+                   <number>0</number>
+                  </property>
+                  <widget class="QWidget" name="page">
+                   <layout class="QHBoxLayout" name="horizontalLayout_3">
+                    <item>
+                     <widget class="QLabel" name="label">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A1. Customer Entry</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_2">
+                   <layout class="QHBoxLayout" name="horizontalLayout_4">
+                    <item>
+                     <widget class="QLabel" name="label_2">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A2. Contractor Master Data Entry</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_3">
+                   <layout class="QHBoxLayout" name="horizontalLayout_6">
+                    <item>
+                     <widget class="QLabel" name="label_3">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A3. Rubber Wood Supplier Master Data Entry</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_4">
+                   <layout class="QHBoxLayout" name="horizontalLayout_7">
+                    <item>
+                     <widget class="QLabel" name="label_4">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A4. User Authorization Maintenance</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_5">
+                   <layout class="QHBoxLayout" name="horizontalLayout_8">
+                    <item>
+                     <widget class="QLabel" name="label_5">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A5. KD Charges By Customer</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_6">
+                   <layout class="QHBoxLayout" name="horizontalLayout_9">
+                    <item>
+                     <widget class="QLabel" name="label_6">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A6. PT Charges By Customer</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_7">
+                   <layout class="QHBoxLayout" name="horizontalLayout_10">
+                    <item>
+                     <widget class="QLabel" name="label_7">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A7. Storage Invoice No</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_8">
+                   <layout class="QHBoxLayout" name="horizontalLayout_11">
+                    <item>
+                     <widget class="QLabel" name="label_8">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A8. Price List For Contractor Master Data Entry</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_9">
+                   <layout class="QHBoxLayout" name="horizontalLayout_12">
+                    <item>
+                     <widget class="QLabel" name="label_9">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A9. Price List For Contractor Master Data Entry</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_10">
+                   <layout class="QHBoxLayout" name="horizontalLayout_13">
+                    <item>
+                     <widget class="QLabel" name="label_10">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A10. Finger Joint Price List For Contractor Master Data Entry</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_11">
+                   <layout class="QHBoxLayout" name="horizontalLayout_14">
+                    <item>
+                     <widget class="QLabel" name="label_11">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A11. Forest Wood Contractor Charges Master Maintenance</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_12">
+                   <layout class="QHBoxLayout" name="horizontalLayout_15">
+                    <item>
+                     <widget class="QLabel" name="label_12">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A12. Rubber Wood Charge Duration Data Entry</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_13">
+                   <layout class="QHBoxLayout" name="horizontalLayout_16">
+                    <item>
+                     <widget class="QLabel" name="label_13">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A13. Forest/Rubber Wood Species Data Entry</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_14">
+                   <layout class="QHBoxLayout" name="horizontalLayout_17">
+                    <item>
+                     <widget class="QLabel" name="label_14">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A14. Forest Wood Cancel No</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_15">
+                   <layout class="QHBoxLayout" name="horizontalLayout_18">
+                    <item>
+                     <widget class="QLabel" name="label_15">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A15. Invoice No Master Maintenance</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_16">
+                   <layout class="QHBoxLayout" name="horizontalLayout_19">
+                    <item>
+                     <widget class="QLabel" name="label_16">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A16. Forest Wood Serial No Master Maintenance</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_17">
+                   <layout class="QHBoxLayout" name="horizontalLayout_20">
+                    <item>
+                     <widget class="QLabel" name="label_17">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A17. Lorry Transport Charges</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_18">
+                   <layout class="QHBoxLayout" name="horizontalLayout_21">
+                    <item>
+                     <widget class="QLabel" name="label_18">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>A18. Convective M3/Ton</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </widget>
+                </item>
                </layout>
+               <zorder>stackedTitle</zorder>
+               <zorder>sideMenuBtn</zorder>
               </widget>
              </item>
              <item>
-              <widget class="QFrame" name="frame_7">
+              <widget class="QFrame" name="frame_11">
                <property name="minimumSize">
                 <size>
-                 <width>1000</width>
+                 <width>400</width>
                  <height>600</height>
                 </size>
                </property>
@@ -914,11 +1270,26 @@ border-color: rgb(85, 0, 255);
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QGridLayout" name="gridLayout">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>20</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>0</number>
+                </property>
                 <item row="0" column="0">
                  <widget class="QStackedWidget" name="stackedWidget">
                   <property name="minimumSize">
                    <size>
-                    <width>1000</width>
+                    <width>400</width>
                     <height>600</height>
                    </size>
                   </property>
@@ -928,20 +1299,21 @@ border-color: rgb(85, 0, 255);
                    </font>
                   </property>
                   <property name="currentIndex">
-                   <number>11</number>
+                   <number>0</number>
                   </property>
-                  <widget class="CustomerEntry" name="customerEntry"/>
-                  <widget class="ContractorEntry" name="contractorEntry"/>
-                  <widget class="RWSupplier" name="rwSupplier"/>
-                  <widget class="UserMaintenance" name="userMaintenance"/>
-                  <widget class="KDCharge" name="kdCharge"/>
-                  <widget class="PTCharge" name="ptCharge"/>
-                  <widget class="ContractorPriceOne" name="contractorPriceOne"/>
-                  <widget class="ContractorPriceTwo" name="contractorPriceTwo"/>
-                  <widget class="ContractorPriceFJ" name="contractorPriceFJ"/>
-                  <widget class="FWContCharges" name="fwContractorPrice"/>
-                  <widget class="RWChargeDuration" name="rwChargeDuration"/>
-                  <widget class="FWRWSpecies" name="fwrwSpecies"/>
+                  <widget class="CustomerEntry" name="A1"/>
+                  <widget class="ContractorEntry" name="A2"/>
+                  <widget class="RWSupplier" name="A3"/>
+                  <widget class="UserMaintenance" name="A4"/>
+                  <widget class="KDCharge" name="A5"/>
+                  <widget class="PTCharge" name="A6"/>
+                  <widget class="QWidget" name="A7"/>
+                  <widget class="ContractorPriceOne" name="A8"/>
+                  <widget class="ContractorPriceTwo" name="A9"/>
+                  <widget class="ContractorPriceFJ" name="A10"/>
+                  <widget class="FWContCharges" name="A11"/>
+                  <widget class="RWChargeDuration" name="A12"/>
+                  <widget class="FWRWSpecies" name="A13"/>
                  </widget>
                 </item>
                </layout>
@@ -954,21 +1326,12 @@ border-color: rgb(85, 0, 255);
         </widget>
        </item>
       </layout>
+      <zorder>frame_4</zorder>
+      <zorder>sideMenuContainer</zorder>
      </widget>
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1079</width>
-     <height>26</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <customwidgets>
   <customwidget>
