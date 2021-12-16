@@ -33,17 +33,18 @@ class MasterMaintenance(QtWidgets.QMainWindow):
         self.kdChargeBtn.clicked.connect(lambda: self.display(4))
         self.ptChargeBtn.clicked.connect(lambda: self.display(5))
         self.contPriceOneBtn.clicked.connect(lambda: self.display(6))
-        self.contPriceTwoBtn.clicked.connect(lambda: self.display(7))
-        self.contPriceFJBtn.clicked.connect(lambda: self.display(8))
-        self.fwContChargeBtn.clicked.connect(lambda: self.display(9))
-        self.rwChargeDurationBtn.clicked.connect(lambda: self.display(10))
-        self.fwrwSpeciesBtn.clicked.connect(lambda: self.display(11))
+        self.contPriceTwoBtn.clicked.connect(lambda: self.display(8))
+        self.contPriceFJBtn.clicked.connect(lambda: self.display(9))
+        self.fwContChargeBtn.clicked.connect(lambda: self.display(10))
+        self.rwChargeDurationBtn.clicked.connect(lambda: self.display(11))
+        self.fwrwSpeciesBtn.clicked.connect(lambda: self.display(12))
 
         # set event response for side bar menu button
         self.sideMenuBtn.clicked.connect(self.toggleMenu)
 
     def display(self, index):
         self.stackedWidget.setCurrentIndex(index)
+        self.stackedTitle.setCurrentIndex(index)
 
     def toggleMenu(self):
         # Get current left menu width
@@ -52,7 +53,7 @@ class MasterMaintenance(QtWidgets.QMainWindow):
         # If minimized
         if width == 0:
             # Expand menu
-            newWidth = 228
+            newWidth = 240
         # If maximized
         else:
             # Restore menu
