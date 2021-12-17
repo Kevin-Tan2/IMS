@@ -129,4 +129,4 @@ class InvoiceWidget(QtWidgets.QMainWindow):
         self.refresh_input_text()
 
     def close_window(self):
-        pass
+        self.close()
