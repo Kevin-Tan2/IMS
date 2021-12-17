@@ -1,15 +1,12 @@
 import sys
 
-from PyQt5.QtCore import QAbstractTableModel, QPropertyAnimation
+from PyQt5.QtCore import QPropertyAnimation
 from login import login
-from customer_entry import customerEntry_proto
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import Qt
+from PyQt5 import QtCore, QtWidgets
 from PyQt5.uic import loadUi
-from tableViewModel import tableModel, load_csv
-import pandas as pd
-import icons
-from pathlib import Path
+
+from tableViewModel import load_csv, tableModel
+from storage_invoice.storageInvoiceNo import StorageInvoice
 
 
 class MasterMaintenance(QtWidgets.QMainWindow):
@@ -18,8 +15,10 @@ class MasterMaintenance(QtWidgets.QMainWindow):
 
         super().__init__()
 
-        # load the main.ui
+        # to create separate window for Storage Invoice
+        self.storageInvoice = StorageInvoice()
 
+        # load the main.ui
         loadUi("main.ui", self)
 
         # side bar menu animation
@@ -32,15 +31,18 @@ class MasterMaintenance(QtWidgets.QMainWindow):
         self.userMaintBtn.clicked.connect(lambda: self.display(3))
         self.kdChargeBtn.clicked.connect(lambda: self.display(4))
         self.ptChargeBtn.clicked.connect(lambda: self.display(5))
-        self.contPriceOneBtn.clicked.connect(lambda: self.display(6))
+        self.contPriceOneBtn.clicked.connect(lambda: self.display(7))
         self.contPriceTwoBtn.clicked.connect(lambda: self.display(8))
         self.contPriceFJBtn.clicked.connect(lambda: self.display(9))
         self.fwContChargeBtn.clicked.connect(lambda: self.display(10))
         self.rwChargeDurationBtn.clicked.connect(lambda: self.display(11))
         self.fwrwSpeciesBtn.clicked.connect(lambda: self.display(12))
-
+        self.stockInvoiceBtn.clicked.connect(self.display_invoice)
         # set event response for side bar menu button
         self.sideMenuBtn.clicked.connect(self.toggleMenu)
+
+    def display_invoice(self):
+        self.storageInvoice.show()
 
     def display(self, index):
         self.stackedWidget.setCurrentIndex(index)
