@@ -18,3 +18,7 @@ class StorageInvoice(InvoiceWidget):
         df = pd.DataFrame({'Invoice No': [str(self.inputNo.text())]})
         return df
 
+    def refresh_input_text(self):
+        if not self.df.empty:
+            self.inputNo.setText(str(self.df['Invoice No'].iloc[-1]))
+

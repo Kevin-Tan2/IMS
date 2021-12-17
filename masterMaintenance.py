@@ -103,9 +103,18 @@ class InvoiceWidget(QtWidgets.QMainWindow):
 
         self.df = load_csv(csvFilePath, self.columnNames)
 
+        # set text to the input text
+        self.refresh_input_text()
+
         # event responses
         self.saveButton.clicked.connect(lambda: self.save_csv(self.csvFilePath))
         self.closeButton.clicked.connect(self.close_window)
+
+    def refresh_input_text(self):
+        pass
+
+    def construct_df(self):
+        pass
 
     def save_csv(self, csvFilePath):
 
@@ -115,6 +124,9 @@ class InvoiceWidget(QtWidgets.QMainWindow):
 
         # save the dataframe into .csv file (ignoring the index)
         self.df.to_csv(csvFilePath, index=False)
+
+        # update the text input box
+        self.refresh_input_text()
 
     def close_window(self):
         pass
