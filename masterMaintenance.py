@@ -1,3 +1,4 @@
+import pandas as pd
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QHeaderView, QAbstractItemView
@@ -10,9 +11,9 @@ class MasterMaintenance(QtWidgets.QMainWindow):
     def __init__(self, uiFilePath, csvFilePath, columnNames):
         super().__init__()
 
-        self.uiFilePath = uiFilePath        # store the .ui file path
-        self.csvFilePath = csvFilePath      # store the .csv file Path
-        self.columnNames = columnNames      # the column/header names array used in data frame
+        self.uiFilePath = uiFilePath  # store the .ui file path
+        self.csvFilePath = csvFilePath  # store the .csv file Path
+        self.columnNames = columnNames  # the column/header names array used in data frame
 
         # load ui file
         loadUi(uiFilePath, self)
@@ -84,3 +85,20 @@ class MasterMaintenance(QtWidgets.QMainWindow):
     def search_query(self):
         # to filter out data that does not match with the search bar
         self.proxy.setFilterFixedString(self.searchBar.text())
+
+
+class InvoiceWidget(QtWidgets.QMainWindow):
+
+    def __init__(self, uiFilePath, csvFilePath, columnNames):
+        super().__init__()
+
+        self.uiFilePath = uiFilePath
+        self.csvFilePath = csvFilePath
+
+        # temporary variable
+        self.columnNames = columnNames
+
+        # load ui file
+        loadUi(self.uiFilePath, self)
+
+
