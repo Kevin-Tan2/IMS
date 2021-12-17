@@ -101,4 +101,20 @@ class InvoiceWidget(QtWidgets.QMainWindow):
         # load ui file
         loadUi(self.uiFilePath, self)
 
+        self.df = load_csv(csvFilePath, self.columnNames)
 
+        # event responses
+        self.saveButton.clicked.connect(lambda: self.save_csv(self.csvFilePath))
+        self.closeButton.clicked.connect(self.close_window)
+
+    def save_csv(self, csvFilePath):
+
+        # adding new data into the dataframe
+        tempDf = self.df  # store the current data frame into a temp variable
+        self.df = tempDf.append(self.construct_df(), ignore_index=True)  # adding new row into the dataframe
+
+        # save the dataframe into .csv file (ignoring the index)
+        self.df.to_csv(csvFilePath, index=False)
+
+    def close_window(self):
+        pass
