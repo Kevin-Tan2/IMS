@@ -7,6 +7,7 @@ from PyQt5.uic import loadUi
 
 from tableViewModel import load_csv, tableModel
 from storage_invoice.storageInvoiceNo import StorageInvoice
+from fw_cancel_no.fwCancelNo import FWCancel
 
 
 class MasterMaintenance(QtWidgets.QMainWindow):
@@ -17,6 +18,7 @@ class MasterMaintenance(QtWidgets.QMainWindow):
 
         # to create separate window for Storage Invoice
         self.storageInvoice = StorageInvoice()
+        self.cancelStock = FWCancel()
 
         # load the main.ui
         loadUi("main.ui", self)
@@ -38,6 +40,7 @@ class MasterMaintenance(QtWidgets.QMainWindow):
         self.rwChargeDurationBtn.clicked.connect(lambda: self.display(11))
         self.fwrwSpeciesBtn.clicked.connect(lambda: self.display(12))
         self.stockInvoiceBtn.clicked.connect(self.display_invoice)
+        self.fwCancelNoBtn.clicked.connect(self.cancelStock.show)
         # set event response for side bar menu button
         self.sideMenuBtn.clicked.connect(self.toggleMenu)
 
