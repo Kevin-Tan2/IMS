@@ -5,8 +5,7 @@ from login import login
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.uic import loadUi
 
-from A_master_maintenance_setup.master.storage_invoice.storageInvoiceNo import StorageInvoice
-from A_master_maintenance_setup.master.fw_cancel_no.fwCancelNo import FWCancel
+from A_master_maintenance_setup.masterMaintenanceSetup import MasterMaintenanceSetup
 
 
 class MainMenu(QtWidgets.QMainWindow):
@@ -26,6 +25,9 @@ class Controller:
         self.loginPage = login.LoginPage("./login/login.ui", "./login/listUsers.csv")
         self.mainMenu = MainMenu()
 
+        # setup MasterMaintenanceSetup class from A_master_maintenance_setup
+        self.masterSetup = MasterMaintenanceSetup("A_master_maintenance_setup")
+
     def show_login(self):
         # display login page
         self.loginPage.show()
@@ -39,6 +41,17 @@ class Controller:
 
         # display the customer entry
         self.mainMenu.show()
+
+        # event response when the signal is emitted from the main menu
+        self.mainMenu.switch_window.connect(self.show_section)
+
+    def show_section(self, sectNo):
+
+        self.mainMenu.hide()
+
+        if sectNo == 'A':
+            self.masterSetup.switch_window.connect(self.mainMenu.show)
+            self.masterSetup.show()
 
 
 def main():
