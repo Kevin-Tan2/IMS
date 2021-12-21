@@ -9,7 +9,7 @@ from A_master_maintenance_setup.master.storage_invoice.storageInvoiceNo import S
 from A_master_maintenance_setup.master.fw_cancel_no.fwCancelNo import FWCancel
 
 
-class MasterMaintenance(QtWidgets.QMainWindow):
+class Master(QtWidgets.QMainWindow):
 
     def __init__(self):
 
@@ -19,8 +19,8 @@ class MasterMaintenance(QtWidgets.QMainWindow):
         self.storageInvoice = StorageInvoice()
         self.cancelStock = FWCancel()
 
-        # load the masterMaintenanceSetup.ui
-        loadUi("masterMaintenanceSetup.ui", self)
+        # load the master.ui
+        loadUi("master.ui", self)
 
         # side bar menu animation
         self.animation = QPropertyAnimation(self.sideMenuContainer, b"maximumWidth")  # Animate minimumWidht
