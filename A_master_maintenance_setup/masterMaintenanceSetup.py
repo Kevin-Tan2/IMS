@@ -18,3 +18,11 @@ class MasterMaintenanceSetup(QtWidgets.QMainWindow):
 
         # load ui
         loadUi(uiFilePath, self)
+
+        self.masterMaintenance = None
+
+        self.dropBox.activated.connect(self.switch_widget)
+
+    def switch_widget(self):
+        self.stackedWidget.setCurrentIndex(self.dropBox.currentIndex())
+
