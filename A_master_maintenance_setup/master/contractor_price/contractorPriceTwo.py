@@ -1,10 +1,4 @@
-import sys
-from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QAbstractItemView
-from PyQt5.QtCore import Qt
-from masterMaintenance import MasterMaintenance
-from tableViewModel import tableModel, load_csv
-from contractor_price.contractorPriceOne import ContractorPriceOne
+from A_master_maintenance_setup.master.contractor_price.contractorPriceOne import ContractorPriceOne
 import pandas as pd
 
 

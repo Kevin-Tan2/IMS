@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>924</width>
-    <height>782</height>
+    <height>796</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -119,7 +119,7 @@ border: 1px solid black;
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item alignment="Qt::AlignLeft">
-           <widget class="QComboBox" name="comboBox">
+           <widget class="QComboBox" name="dropBox">
             <item>
              <property name="text">
               <string>Master Maintenance</string>
@@ -148,356 +148,274 @@ border: 1px solid black;
              <number>0</number>
             </property>
             <widget class="QWidget" name="page">
-             <widget class="QPushButton" name="pushButton">
-              <property name="geometry">
-               <rect>
-                <x>112</x>
-                <y>34</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Customer Entry</string>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="pushButton_2">
-              <property name="geometry">
-               <rect>
-                <x>112</x>
-                <y>105</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>RW Contractor</string>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="pushButton_3">
-              <property name="geometry">
-               <rect>
-                <x>491</x>
-                <y>34</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Contrator Price List - 1</string>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="pushButton_4">
-              <property name="geometry">
-               <rect>
-                <x>112</x>
-                <y>176</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>RW Supplier</string>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="pushButton_5">
-              <property name="geometry">
-               <rect>
-                <x>491</x>
-                <y>105</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Contrator Price List - 2</string>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="pushButton_6">
-              <property name="geometry">
-               <rect>
-                <x>491</x>
-                <y>176</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Contrator Price List - FJ</string>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="pushButton_7">
-              <property name="geometry">
-               <rect>
-                <x>491</x>
-                <y>247</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>FW Contractor Charges</string>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="pushButton_8">
-              <property name="geometry">
-               <rect>
-                <x>112</x>
-                <y>247</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>User Maintenance Entry</string>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="pushButton_9">
-              <property name="geometry">
-               <rect>
-                <x>112</x>
-                <y>318</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>KD Charges</string>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="pushButton_10">
-              <property name="geometry">
-               <rect>
-                <x>491</x>
-                <y>318</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>RW Charge Duration</string>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="pushButton_11">
-              <property name="geometry">
-               <rect>
-                <x>112</x>
-                <y>389</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>PT Charge</string>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="pushButton_12">
-              <property name="geometry">
-               <rect>
-                <x>491</x>
-                <y>389</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>FW/RW Species</string>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="pushButton_13">
-              <property name="geometry">
-               <rect>
-                <x>112</x>
-                <y>460</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Stock Invoice</string>
-              </property>
-             </widget>
-             <widget class="QPushButton" name="pushButton_14">
-              <property name="geometry">
-               <rect>
-                <x>491</x>
-                <y>460</y>
-                <width>271</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>271</width>
-                <height>41</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>FW Cancel No</string>
-              </property>
-             </widget>
+             <layout class="QGridLayout" name="gridLayout_2">
+              <item row="0" column="0">
+               <widget class="QPushButton" name="customerEntryBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Customer Entry</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QPushButton" name="contPriceOneBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Contrator Price List - 1</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QPushButton" name="rwContBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>RW Contractor</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QPushButton" name="contPriceTwoBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Contrator Price List - 2</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QPushButton" name="rwSupplierBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>RW Supplier</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QPushButton" name="contPriceFJBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Contrator Price List - FJ</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QPushButton" name="userMaintenanceBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>User Maintenance Entry</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QPushButton" name="fwContChargeBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>FW Contractor Charges</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QPushButton" name="kdChargeBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>KD Charges</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QPushButton" name="rwChargeDurationBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>RW Charge Duration</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="0">
+               <widget class="QPushButton" name="ptChargeBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>PT Charge</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <widget class="QPushButton" name="fwrwSpeciesBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>FW/RW Species</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QPushButton" name="stockInvoiceBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Stock Invoice</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QPushButton" name="fwCancelNo">
+                <property name="minimumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>41</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>FW Cancel No</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </widget>
             <widget class="QWidget" name="page_2">
              <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -1035,7 +953,7 @@ font-size: 12pt;
          </layout>
         </widget>
        </item>
-       <item alignment="Qt::AlignBottom">
+       <item>
         <widget class="QFrame" name="frame_4">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -1048,7 +966,7 @@ font-size: 12pt;
            <number>150</number>
           </property>
           <item alignment="Qt::AlignRight">
-           <widget class="QPushButton" name="pushButton_15">
+           <widget class="QPushButton" name="closeButton">
             <property name="minimumSize">
              <size>
               <width>150</width>

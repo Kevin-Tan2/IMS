@@ -5,9 +5,8 @@ from login import login
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.uic import loadUi
 
-from tableViewModel import load_csv, tableModel
-from storage_invoice.storageInvoiceNo import StorageInvoice
-from fw_cancel_no.fwCancelNo import FWCancel
+from A_master_maintenance_setup.master.storage_invoice.storageInvoiceNo import StorageInvoice
+from A_master_maintenance_setup.master.fw_cancel_no.fwCancelNo import FWCancel
 
 
 class MasterMaintenance(QtWidgets.QMainWindow):
