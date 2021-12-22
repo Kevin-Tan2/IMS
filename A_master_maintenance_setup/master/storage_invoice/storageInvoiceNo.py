@@ -1,18 +1,26 @@
 import sys
 
+from PyQt5 import QtWidgets
+
 from masterMaintenance import InvoiceWidget
 import pandas as pd
 
 
 class StorageInvoice(InvoiceWidget):
 
-    def __init__(self):
+    def __init__(self, currentDir=None):
 
-        uiFilePath = "./storage_invoice/storageInvoiceNo.ui"
-        csvFilePath = "./storage_invoice/storageInvoiceList.csv"
-        columnNames = ['Invoice No']
+        if currentDir is None:
+            currentDir = ""
+        else:
+            currentDir += "/"
 
-        super().__init__(uiFilePath, csvFilePath, columnNames)
+        self.uiFilePath = currentDir + "storageInvoiceNo.ui"
+        self.csvFilePath = currentDir + "storageInvoiceList.csv"
+
+        self.columnNames = ['Invoice No']
+
+        super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
 
     def construct_df(self):
         df = pd.DataFrame({'Invoice No': [str(self.inputNo.text())]})
@@ -22,3 +30,10 @@ class StorageInvoice(InvoiceWidget):
         if not self.df.empty:
             self.inputNo.setText(str(self.df['Invoice No'].iloc[-1]))
 
+
+# to test each module
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    widget = StorageInvoice()
+    widget.show()
+    sys.exit(app.exec_())

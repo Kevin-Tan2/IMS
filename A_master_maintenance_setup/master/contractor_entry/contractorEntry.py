@@ -11,10 +11,15 @@ from pathlib import Path
 
 
 class ContractorEntry(MasterMaintenance):
-    def __init__(self):
+    def __init__(self, currentDir=None):
 
-        self.uiFilePath = "./contractor_entry/contractorEntry.ui"
-        self.csvFilePath = "./contractor_entry/contractorList.csv"
+        if currentDir is None:
+            currentDir = ""
+        else:
+            currentDir += "/"
+
+        self.uiFilePath = currentDir + "contractorEntry.ui"
+        self.csvFilePath = currentDir + "contractorList.csv"
 
         # create headers for .csv use
         self.columnNames = ['Division', 'Contractor ID', 'Contractor Name', 'Employee No', 'Contractor Type']
@@ -54,8 +59,9 @@ class ContractorEntry(MasterMaintenance):
         super().save_csv(self.csvFilePath)
 
 
+# to test each module
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    contractorEntry = ContractorEntry()
-    contractorEntry.show()
+    widget = ContractorEntry()
+    widget.show()
     sys.exit(app.exec_())

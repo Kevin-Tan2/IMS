@@ -11,10 +11,23 @@ from pathlib import Path
 
 class UserMaintenance(QtWidgets.QMainWindow):
 
-    def __init__(self):
+    def __init__(self, currentDir=None):
         super().__init__()
 
-        uiFilePath = "./maintenance_entry/userMaintenanceEntry.ui"
+        if currentDir is None:
+            currentDir = ""
+        else:
+            currentDir += "/"
+
+        self.uiFilePath = currentDir + "userMaintenanceEntry.ui"
 
         # load the ui file
-        loadUi(uiFilePath, self)
+        loadUi(self.uiFilePath, self)
+
+
+# to test each module
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    widget = UserMaintenance()
+    widget.show()
+    sys.exit(app.exec_())

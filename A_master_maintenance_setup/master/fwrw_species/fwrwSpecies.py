@@ -1,12 +1,22 @@
+import sys
+
+from PyQt5 import QtWidgets
+
 from masterMaintenance import MasterMaintenance
 import pandas as pd
 
 
 class FWRWSpecies(MasterMaintenance):
 
-    def __init__(self):
-        self.uiFilePath = "./fwrw_species/fwrwSpecies.ui"
-        self.csvFilePath = "./fwrw_species/fwrwSpeciesList.csv"
+    def __init__(self, currentDir=None):
+
+        if currentDir is None:
+            currentDir = ""
+        else:
+            currentDir += "/"
+
+        self.uiFilePath = currentDir + "fwrwSpecies.ui"
+        self.csvFilePath = currentDir + "fwrwSpeciesList.csv"
 
         # create headers for .csv use
         self.columnNames = ['Species', 'Description']
@@ -31,3 +41,11 @@ class FWRWSpecies(MasterMaintenance):
 
     def save_csv(self):
         super().save_csv(self.csvFilePath)
+
+
+# to test each module
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    contractorEntry = FWRWSpecies()
+    contractorEntry.show()
+    sys.exit(app.exec_())

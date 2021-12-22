@@ -9,24 +9,25 @@ import pandas as pd
 
 class ContractorPriceFJ(MasterMaintenance):
 
-    def __init__(self, uiFilePath="./contractor_price/contractorPriceFJ.ui",
-                 csvFilePathOne="./contractor_price/FingerJointPrice.csv",
-                 csvFilePathTwo="./contractor_price/FJbyMachinePrice.csv",
-                 columnNames=None):
+    def __init__(self, currentDir=None):
 
-        if columnNames is None:
-            columnNames = ['Size1', 'Size2', 'Price']
+        if currentDir is None:
+            currentDir = ""
+        else:
+            currentDir += "/"
 
-        self.uiFilePath = uiFilePath
+        self.uiFilePath = currentDir + "contractorPriceFJ.ui"
 
-        self.csvFilePathArray = [csvFilePathOne, csvFilePathTwo]
+        self.csvFilePathOne = currentDir + "FingerJointPrice.csv"
+        self.csvFilePathTwo = currentDir + "FJbyMachinePrice.csv"
+        self.csvFilePathArray = [self.csvFilePathOne, self.csvFilePathTwo]
 
-        self.columnNames = columnNames
+        self.columnNames = ['Size1', 'Size2', 'Price']
 
-        super().__init__(self.uiFilePath, csvFilePathOne, self.columnNames)
+        super().__init__(self.uiFilePath, self.csvFilePathOne, self.columnNames)
 
         # create second dataframe for the second table
-        self.df2 = load_csv(csvFilePathTwo, self.columnNames)
+        self.df2 = load_csv(self.csvFilePathTwo, self.columnNames)
 
         self.dfArray = [self.df, self.df2]
 
@@ -117,3 +118,11 @@ class ContractorPriceFJ(MasterMaintenance):
             self.dfArray[tableNo] = tempDf.drop(index.row())  # delete each selected row from the dataframe
 
         self.refresh_table(tableNo)
+
+
+# to test each module
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    widget = ContractorPriceFJ()
+    widget.show()
+    sys.exit(app.exec_())

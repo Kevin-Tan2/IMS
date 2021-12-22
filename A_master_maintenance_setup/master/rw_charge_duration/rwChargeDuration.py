@@ -1,13 +1,22 @@
+import sys
+
+from PyQt5 import QtWidgets
+
 from masterMaintenance import MasterMaintenance
 import pandas as pd
 
 
 class RWChargeDuration(MasterMaintenance):
 
-    def __init__(self):
+    def __init__(self, currentDir=None):
 
-        self.uiFilePath = "./rw_charge_duration/rwChargeDuration.ui"
-        self.csvFilePath = "./rw_charge_duration/rwChargeDurationList.csv"
+        if currentDir is None:
+            currentDir = ""
+        else:
+            currentDir += "/"
+
+        self.uiFilePath = currentDir + "rwChargeDuration.ui"
+        self.csvFilePath = currentDir + "rwChargeDurationList.csv"
         self.columnNames = ['Range of Size', 'Expected Day']
 
         super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
@@ -16,7 +25,6 @@ class RWChargeDuration(MasterMaintenance):
         self.df = self.df.sort_values(by='Range of Size')
 
     def reset_entries(self):
-
         self.size.clear()
         self.duration.clear()
 
@@ -27,7 +35,6 @@ class RWChargeDuration(MasterMaintenance):
         super().refresh_table()
 
     def construct_df(self):
-
         size = str(self.size.text())
         duration = str(self.duration.text())
 
@@ -40,3 +47,11 @@ class RWChargeDuration(MasterMaintenance):
 
     def save_csv(self):
         super().save_csv(self.csvFilePath)
+
+
+# to test each module
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    widget = RWChargeDuration()
+    widget.show()
+    sys.exit(app.exec_())

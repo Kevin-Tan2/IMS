@@ -1,13 +1,22 @@
+import sys
+
 import pandas as pd
+from PyQt5 import QtWidgets
 
 from masterMaintenance import MasterMaintenance
 
 
 class FWContCharges(MasterMaintenance):
 
-    def __init__(self):
-        self.uiFilePath = "./fw_contractor_charges/fwContCharges.ui"
-        self.csvFilePath = "./fw_contractor_charges/fwContChargesList.csv"
+    def __init__(self, currentDir=None):
+
+        if currentDir is None:
+            currentDir = ""
+        else:
+            currentDir += "/"
+
+        self.uiFilePath = currentDir + "fwContCharges.ui"
+        self.csvFilePath = currentDir + "fwContChargesList.csv"
         self.columnNames = ['Length', 'Charges']
 
         super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
@@ -38,3 +47,11 @@ class FWContCharges(MasterMaintenance):
 
     def save_csv(self, csvFilePath):
         super().save_csv(self.csvFilePath)
+
+
+# to test the module individually
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    customerEntry = FWContCharges()
+    customerEntry.show()
+    sys.exit(app.exec_())

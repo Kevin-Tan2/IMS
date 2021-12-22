@@ -12,9 +12,15 @@ from pathlib import Path
 
 class PTCharge(MasterMaintenance):
 
-    def __init__(self):
-        self.uiFilePath = "./pt_charge/ptCharge.ui"
-        self.csvFilePath = "./pt_charge/ptChargeList.csv"
+    def __init__(self, currentDir=None):
+
+        if currentDir is None:
+            currentDir = ""
+        else:
+            currentDir += "/"
+
+        self.uiFilePath = currentDir + "ptCharge.ui"
+        self.csvFilePath = currentDir + "ptChargeList.csv"
 
         # load the csv file as dataframe
         self.columnNames = ['Customer ID', 'Price']
@@ -41,8 +47,9 @@ class PTCharge(MasterMaintenance):
         super().save_csv(self.csvFilePath)
 
 
+# to test each module
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    testWidget = PTCharge()
-    testWidget.show()
+    widget = PTCharge()
+    widget.show()
     sys.exit(app.exec_())

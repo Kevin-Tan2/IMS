@@ -12,9 +12,15 @@ from pathlib import Path
 
 class KDCharge(MasterMaintenance):
 
-    def __init__(self):
-        self.uiFilePath = "./kd_charge/kdCharge.ui"
-        self.csvFilePath = "./kd_charge/kdChargeList.csv"
+    def __init__(self, currentDir=None):
+
+        if currentDir is None:
+            currentDir = ""
+        else:
+            currentDir += "/"
+
+        self.uiFilePath = currentDir + "kdCharge.ui"
+        self.csvFilePath = currentDir + "kdChargeList.csv"
         self.columnNames = ['Customer ID', 'Size', 'Price', 'Wood Type', 'Type', 'Species']
 
         super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
@@ -72,3 +78,11 @@ class KDCharge(MasterMaintenance):
 
     def save_csv(self):
         super().save_csv(self.csvFilePath)
+
+
+# to test each module
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    widget = KDCharge()
+    widget.show()
+    sys.exit(app.exec_())

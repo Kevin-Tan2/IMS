@@ -1,15 +1,21 @@
+import sys
+
+from PyQt5 import QtWidgets
+
 from A_master_maintenance_setup.master.contractor_price.contractorPriceOne import ContractorPriceOne
 import pandas as pd
 
 
 class ContractorPriceTwo(ContractorPriceOne):
 
-    def __init__(self):
-        uiFilePath = "./contractor_price/contractorPriceTonnage.ui"
-        csvFilePathOne = "./contractor_price/TonnagePriceWetWood.csv"
-        csvFilePathTwo = "./contractor_price/TonnagePriceDryWood.csv"
+    def __init__(self, currentDir=None):
+
+        uiFilePath = "contractorPriceTonnage.ui"
+        csvFilePathOne = "TonnagePriceWetWood.csv"
+        csvFilePathTwo = "TonnagePriceDryWood.csv"
         columnNames = ['Size1', 'Size2', 'Price']
-        super().__init__(uiFilePath, csvFilePathOne, csvFilePathTwo, columnNames)
+
+        super().__init__(currentDir, uiFilePath, csvFilePathOne, csvFilePathTwo, columnNames)
 
     def reset_entries(self, tableNo=0):
 
@@ -32,3 +38,11 @@ class ContractorPriceTwo(ContractorPriceOne):
         df = pd.DataFrame({'Size1': [height[index]], 'Size2': [width[index]], 'Price': [price[index]]})
 
         return df
+
+
+# to test each module
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    widget = ContractorPriceTwo()
+    widget.show()
+    sys.exit(app.exec_())

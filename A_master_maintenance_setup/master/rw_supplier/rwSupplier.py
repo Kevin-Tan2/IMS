@@ -1,22 +1,21 @@
 import sys
-from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QHeaderView, QAbstractItemView
-from PyQt5.QtCore import QAbstractTableModel, QSortFilterProxyModel, Qt
-import pandas as pd
 from masterMaintenance import MasterMaintenance
-import os.path
-from pathlib import Path
-
-from main import load_csv, tableModel
+from tableViewModel import tableModel, load_csv
+import pandas as pd
 
 
 class RWSupplier(MasterMaintenance):
 
-    def __init__(self):
+    def __init__(self, currentDir=None):
 
-        self.uiFilePath = "./rw_supplier/rwSupplier.ui"
-        self.csvFilePath = "./rw_supplier/rwSupplierList.csv"
+        if currentDir is None:
+            currentDir = ""
+        else:
+            currentDir += "/"
+
+        self.uiFilePath = currentDir + "rwSupplier.ui"
+        self.csvFilePath = currentDir + "rwSupplierList.csv"
 
         # create headers for .csv use
         self.columnNames = ['Supplier ID', 'Supplier Name']
@@ -41,3 +40,11 @@ class RWSupplier(MasterMaintenance):
 
     def save_csv(self):
         super().save_csv(self.csvFilePath)
+
+
+# to test each module
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    widget = RWSupplier()
+    widget.show()
+    sys.exit(app.exec_())

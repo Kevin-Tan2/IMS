@@ -43,6 +43,6 @@ class MasterMaintenanceSetup(QtWidgets.QMainWindow):
 # Create main function to test the module individually
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    masterSetup = MasterMaintenanceSetup()
-    masterSetup.show()
+    widget = MasterMaintenanceSetup()
+    widget.show()
     sys.exit(app.exec_())

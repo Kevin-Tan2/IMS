@@ -1,16 +1,25 @@
+import sys
+
+from PyQt5 import QtWidgets
+
 from masterMaintenance import InvoiceWidget
 import pandas as pd
 
 
 class FWCancel(InvoiceWidget):
 
-    def __init__(self):
+    def __init__(self, currentDir=None):
 
-        uiFilePath = "./fw_cancel_no/fwCancelNo.ui"
-        csvFilePath = "./fw_cancel_no/fwCancelList.csv"
-        columnNames = ['Cancel No']
+        if currentDir is None:
+            currentDir = ""
+        else:
+            currentDir += "/"
 
-        super().__init__(uiFilePath, csvFilePath, columnNames)
+        self.uiFilePath = currentDir + "fwCancelNo.ui"
+        self.csvFilePath = currentDir + "fwCancelList.csv"
+        self.columnNames = ['Cancel No']
+
+        super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
 
     def construct_df(self):
         df = pd.DataFrame({'Cancel No': [str(self.inputNo.text())]})
@@ -19,3 +28,11 @@ class FWCancel(InvoiceWidget):
     def refresh_input_text(self):
         if not self.df.empty:
             self.inputNo.setText(str(self.df['Cancel No'].iloc[-1]))
+
+
+# to test the module individually
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    customerEntry = FWCancel()
+    customerEntry.show()
+    sys.exit(app.exec_())
