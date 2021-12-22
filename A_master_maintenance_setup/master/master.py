@@ -5,22 +5,30 @@ from login import login
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.uic import loadUi
 
-from A_master_maintenance_setup.master.storage_invoice.storageInvoiceNo import StorageInvoice
-from A_master_maintenance_setup.master.fw_cancel_no.fwCancelNo import FWCancel
-
 
 class Master(QtWidgets.QMainWindow):
 
-    def __init__(self):
+    def __init__(self, currentDir=None):
 
         super().__init__()
 
+        uiFilePath = "master.ui"
+
+        if currentDir is None:
+            currentDir = ""
+        else:
+            currentDir += "/"
+
+        uiFilePath = currentDir + uiFilePath
+
+        '''
         # to create separate window for Storage Invoice
         self.storageInvoice = StorageInvoice()
         self.cancelStock = FWCancel()
+        '''
 
         # load the master.ui
-        loadUi("master.ui", self)
+        loadUi(uiFilePath, self)
 
         # side bar menu animation
         self.animation = QPropertyAnimation(self.sideMenuContainer, b"maximumWidth")  # Animate minimumWidht
@@ -38,13 +46,10 @@ class Master(QtWidgets.QMainWindow):
         self.fwContChargeBtn.clicked.connect(lambda: self.display(10))
         self.rwChargeDurationBtn.clicked.connect(lambda: self.display(11))
         self.fwrwSpeciesBtn.clicked.connect(lambda: self.display(12))
-        self.stockInvoiceBtn.clicked.connect(self.display_invoice)
-        self.fwCancelNoBtn.clicked.connect(self.cancelStock.show)
+        # self.stockInvoiceBtn.clicked.connect(self.storageInvoice.show)
+        # self.fwCancelNoBtn.clicked.connect(self.cancelStock.show)
         # set event response for side bar menu button
         self.sideMenuBtn.clicked.connect(self.toggleMenu)
-
-    def display_invoice(self):
-        self.storageInvoice.show()
 
     def display(self, index):
         self.stackedWidget.setCurrentIndex(index)
