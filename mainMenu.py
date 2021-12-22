@@ -50,7 +50,9 @@ class Controller:
         self.mainMenu.hide()
 
         if sectNo == 'A':
+            # connect the signal to show mainMenu when masterSetup is closed
             self.masterSetup.switch_window.connect(self.mainMenu.show)
+            # show the masterSetup window
             self.masterSetup.show()
 
 
