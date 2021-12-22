@@ -22,7 +22,12 @@ class MasterMaintenanceSetup(QtWidgets.QMainWindow):
         self.masterMaintenance = None
 
         self.dropBox.activated.connect(self.switch_widget)
+        self.closeButton.clicked.connect(self.back)
 
     def switch_widget(self):
         self.stackedWidget.setCurrentIndex(self.dropBox.currentIndex())
+
+    def back(self):
+        self.switch_window.emit()
+        self.close()
 
