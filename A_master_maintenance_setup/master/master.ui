@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Master Maintenance</string>
   </property>
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
@@ -819,7 +819,7 @@ border-color: rgb(85, 0, 255);
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="icons.qrc">
+                <iconset>
                  <normaloff>:/icons/icons/menu-bar.png</normaloff>:/icons/icons/menu-bar.png</iconset>
                </property>
                <property name="iconSize">
@@ -1313,19 +1313,19 @@ border-color: rgb(85, 0, 255);
                <property name="currentIndex">
                 <number>0</number>
                </property>
-               <widget class="CustomerEntry" name="A1"/>
-               <widget class="ContractorEntry" name="A2"/>
-               <widget class="RWSupplier" name="A3"/>
-               <widget class="UserMaintenance" name="A4"/>
-               <widget class="KDCharge" name="A5"/>
-               <widget class="PTCharge" name="A6"/>
+               <widget class="QWidget" name="A1"/>
+               <widget class="QWidget" name="A2"/>
+               <widget class="QWidget" name="A3"/>
+               <widget class="QWidget" name="A4"/>
+               <widget class="QWidget" name="A5"/>
+               <widget class="QWidget" name="A6"/>
                <widget class="QWidget" name="A7"/>
-               <widget class="ContractorPriceOne" name="A8"/>
-               <widget class="ContractorPriceTwo" name="A9"/>
-               <widget class="ContractorPriceFJ" name="A10"/>
-               <widget class="FWContCharges" name="A11"/>
-               <widget class="RWChargeDuration" name="A12"/>
-               <widget class="FWRWSpecies" name="A13"/>
+               <widget class="QWidget" name="A8"/>
+               <widget class="QWidget" name="A9"/>
+               <widget class="QWidget" name="A10"/>
+               <widget class="QWidget" name="A11"/>
+               <widget class="QWidget" name="A12"/>
+               <widget class="QWidget" name="A13"/>
               </widget>
              </item>
             </layout>
@@ -1342,82 +1342,6 @@ border-color: rgb(85, 0, 255);
    </layout>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>CustomerEntry</class>
-   <extends>QWidget</extends>
-   <header>customer_entry/customerEntry</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>ContractorEntry</class>
-   <extends>QWidget</extends>
-   <header>contractor_entry/contractorEntry</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>RWSupplier</class>
-   <extends>QWidget</extends>
-   <header>rw_supplier/rwSupplier</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>UserMaintenance</class>
-   <extends>QWidget</extends>
-   <header>maintenance_entry/userMaintenanceEntry</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>KDCharge</class>
-   <extends>QWidget</extends>
-   <header>kd_charge/kdCharge</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>PTCharge</class>
-   <extends>QWidget</extends>
-   <header>pt_charge/ptCharge</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>ContractorPriceOne</class>
-   <extends>QWidget</extends>
-   <header>contractor_price/contractorPriceOne</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>ContractorPriceTwo</class>
-   <extends>QWidget</extends>
-   <header>contractor_price/contractorPriceTwo</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>ContractorPriceFJ</class>
-   <extends>QWidget</extends>
-   <header>contractor_price/contractorPriceFJ</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>FWContCharges</class>
-   <extends>QWidget</extends>
-   <header>fw_contractor_charges/fwContCharges</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>RWChargeDuration</class>
-   <extends>QWidget</extends>
-   <header>rw_charge_duration/rwChargeDuration</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>FWRWSpecies</class>
-   <extends>QWidget</extends>
-   <header>fwrw_species/fwrwSpecies</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
- <resources>
-  <include location="icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
