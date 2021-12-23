@@ -1311,21 +1311,8 @@ border-color: rgb(85, 0, 255);
                 </font>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>-1</number>
                </property>
-               <widget class="QWidget" name="A1"/>
-               <widget class="QWidget" name="A2"/>
-               <widget class="QWidget" name="A3"/>
-               <widget class="QWidget" name="A4"/>
-               <widget class="QWidget" name="A5"/>
-               <widget class="QWidget" name="A6"/>
-               <widget class="QWidget" name="A7"/>
-               <widget class="QWidget" name="A8"/>
-               <widget class="QWidget" name="A9"/>
-               <widget class="QWidget" name="A10"/>
-               <widget class="QWidget" name="A11"/>
-               <widget class="QWidget" name="A12"/>
-               <widget class="QWidget" name="A13"/>
               </widget>
              </item>
             </layout>
