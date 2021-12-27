@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtCore import QPropertyAnimation
+from PyQt5.QtWidgets import QVBoxLayout, QSizeGrip
 from PyQt5.uic import loadUi
 from PyQt5 import QtCore, QtWidgets
 
@@ -21,6 +22,8 @@ class WoodService(QtWidgets.QMainWindow):
 
         # load the master.ui
         loadUi(self.uiFilePath, self)
+
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
 
 
 # Create main function to test the module individually
