@@ -264,7 +264,7 @@ border: 1px solid black;
                </widget>
               </item>
               <item row="3" column="0">
-               <widget class="QPushButton" name="userMaintenanceBtn">
+               <widget class="QPushButton" name="userMaintBtn">
                 <property name="minimumSize">
                  <size>
                   <width>271</width>
