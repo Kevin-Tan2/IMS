@@ -24,6 +24,7 @@ class WoodService(QtWidgets.QMainWindow):
         loadUi(self.uiFilePath, self)
 
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
 
 
 # Create main function to test the module individually
