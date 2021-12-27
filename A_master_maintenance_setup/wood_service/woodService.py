@@ -37,6 +37,9 @@ class WoodService(QtWidgets.QMainWindow):
         self.minBtn.clicked.connect(lambda: self.showMinimized())
         self.header.mouseMoveEvent = self.moveWindow
 
+        # side menu event
+        self.sideMenuBtn.clicked.connect(lambda: self.slideLeftMenu())
+
     def mousePressEvent(self, event):
         # Get the current position of the mouse
         self.oldPos = event.globalPos()
@@ -64,6 +67,27 @@ class WoodService(QtWidgets.QMainWindow):
             # If the window is on its default size
             WINDOW_SIZE = 0  # Update value to show that the window has been set to normal size
             self.showNormal()
+
+    def slideLeftMenu(self):
+        # Get current left menu width
+        width = self.sideMenuContainer.width()
+
+        # If minimized
+        if width == 60:
+            # Expand menu
+            newWidth = 150
+        # If maximized
+        else:
+            # Restore menu
+            newWidth = 60
+
+        # Animate the transition
+        self.animation = QPropertyAnimation(self.sideMenuContainer, b"minimumWidth")#Animate minimumWidht
+        self.animation.setDuration(250)
+        self.animation.setStartValue(width)#Start value is the current menu width
+        self.animation.setEndValue(newWidth)#end value is the new menu width
+        self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
+        self.animation.start()
 
 
 # Create main function to test the module individually
