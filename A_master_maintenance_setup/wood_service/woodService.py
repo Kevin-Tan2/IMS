@@ -30,11 +30,12 @@ class WoodService(QtWidgets.QMainWindow):
 
         # header's property
         self.closeBtn.clicked.connect(lambda: self.close())
+        self.header.mouseMoveEvent = self.moveWindow
 
     def mousePressEvent(self, event):
         self.oldPos = event.globalPos()
 
-    def mouseMoveEvent(self, event):
+    def moveWindow(self, event):
         # if left mouse button is clicked (Only accept left mouse button clicks)
         if event.buttons() == Qt.LeftButton:
             # Move window
