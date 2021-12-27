@@ -34,6 +34,7 @@ class WoodService(QtWidgets.QMainWindow):
         # header's property
         self.closeBtn.clicked.connect(lambda: self.close())
         self.maxBtn.clicked.connect(lambda: self.toggle_max_restore())
+        self.minBtn.clicked.connect(lambda: self.showMinimized())
         self.header.mouseMoveEvent = self.moveWindow
 
     def mousePressEvent(self, event):
