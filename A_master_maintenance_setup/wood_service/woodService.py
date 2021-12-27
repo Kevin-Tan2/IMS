@@ -1,4 +1,5 @@
 import sys
+import icons_rc
 from PyQt5.QtCore import QPropertyAnimation
 from PyQt5.QtWidgets import QVBoxLayout, QSizeGrip
 from PyQt5.uic import loadUi
@@ -23,8 +24,10 @@ class WoodService(QtWidgets.QMainWindow):
         # load the master.ui
         loadUi(self.uiFilePath, self)
 
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)  # to remove the default window frame
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)  # to give transparent background (provide round corners)
+
+        self.closeBtn.clicked.connect(lambda: self.close())
 
 
 # Create main function to test the module individually
