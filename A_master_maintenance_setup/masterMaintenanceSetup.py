@@ -27,7 +27,19 @@ class MasterMaintenanceSetup(QtWidgets.QMainWindow):
 
         self.dropBox.activated.connect(self.switch_widget)
         self.closeButton.clicked.connect(self.back)
+
         self.customerEntryBtn.clicked.connect(lambda: self.enter_widget(0))
+        self.rwContBtn.clicked.connect(lambda: self.enter_widget(1))
+        self.rwSupplierBtn.clicked.connect(lambda: self.enter_widget(2))
+        self.userMaintBtn.clicked.connect(lambda: self.enter_widget(3))
+        self.kdChargeBtn.clicked.connect(lambda: self.enter_widget(4))
+        self.ptChargeBtn.clicked.connect(lambda: self.enter_widget(5))
+        self.contPriceOneBtn.clicked.connect(lambda: self.enter_widget(7))
+        self.contPriceTwoBtn.clicked.connect(lambda: self.enter_widget(8))
+        self.contPriceFJBtn.clicked.connect(lambda: self.enter_widget(9))
+        self.fwContChargeBtn.clicked.connect(lambda: self.enter_widget(10))
+        self.rwChargeDurationBtn.clicked.connect(lambda: self.enter_widget(11))
+        self.fwrwSpeciesBtn.clicked.connect(lambda: self.enter_widget(12))
 
     def switch_widget(self):
         self.stackedWidget.setCurrentIndex(self.dropBox.currentIndex())
@@ -38,6 +50,8 @@ class MasterMaintenanceSetup(QtWidgets.QMainWindow):
 
     def enter_widget(self, index):
         self.masterMaintenance.show()
+        self.masterMaintenance.stackedWidget.setCurrentIndex(index)
+        self.masterMaintenance.stackedTitle.setCurrentIndex(index)
 
 
 # Create main function to test the module individually
