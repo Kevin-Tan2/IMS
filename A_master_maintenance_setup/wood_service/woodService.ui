@@ -453,6 +453,10 @@ border-top-right-radius: 0px;
 border-bottom-right-radius: 10px;
 }
 
+QStackedWidget{
+border-radius: 0px;
+}
+
 
 QPushButton {
 	color: rgb(0, 0, 0);
@@ -529,7 +533,7 @@ QHeaderView::section {
              <item row="0" column="0">
               <widget class="QStackedWidget" name="stackedWidget">
                <property name="styleSheet">
-                <string notr="true"/>
+                <string notr="true">border-radius: 0px;</string>
                </property>
               </widget>
              </item>
