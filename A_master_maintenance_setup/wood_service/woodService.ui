@@ -87,6 +87,80 @@ border-bottom-right-radius: 0px;
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
+         <widget class="QTreeWidget" name="treeWidget">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>80</y>
+            <width>461</width>
+            <height>581</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTreeWidget::item{
+    color: rgb(255, 255, 255);
+}
+
+QTreeWidget::item:selected{
+    background-color: rgb(173, 173, 173);
+    color: rgb(0, 0, 0);
+}
+
+QHeaderView::section {
+    background-color: rgb(32, 34, 37);
+	border: none;
+    color: white;
+}</string>
+          </property>
+          <column>
+           <property name="text">
+            <string> </string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+          </column>
+          <item>
+           <property name="text">
+            <string>Forest Wood</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>A16 Forest Wood DO No</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>A18 Convective M3 Tons</string>
+            </property>
+           </item>
+          </item>
+          <item>
+           <property name="text">
+            <string>Rubber Wood</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>A19 Finger joined KD Charge</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>A20 KD Handling Charges Master Data Entry</string>
+            </property>
+            <property name="toolTip">
+             <string>A20 KD Handling Charges Master Data Entry</string>
+            </property>
+           </item>
+          </item>
+         </widget>
         </widget>
        </item>
        <item>
@@ -520,33 +594,6 @@ QHeaderView::section {
              <property name="horizontalSpacing">
               <number>0</number>
              </property>
-             <item row="1" column="0">
-              <widget class="QFrame" name="sizeGripY">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QStackedWidget" name="stackedWidget">
-               <property name="styleSheet">
-                <string notr="true">border-radius: 0px;</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QFrame" name="sizeGripX">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-              </widget>
-             </item>
              <item row="1" column="1">
               <widget class="QFrame" name="sizeGripCorner">
                <property name="minimumSize">
@@ -563,6 +610,33 @@ QHeaderView::section {
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QFrame" name="sizeGripY">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QFrame" name="sizeGripX">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QStackedWidget" name="stackedWidget">
+               <property name="styleSheet">
+                <string notr="true">border-radius: 0px;</string>
                </property>
               </widget>
              </item>
