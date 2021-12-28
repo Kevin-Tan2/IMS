@@ -26,6 +26,26 @@ class ConvectiveM3Tons(MasterMaintenance):
 
         super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
 
+    def reset_entries(self):
+        # clear out the entries
+        self.metric.clear()
+        self.tons.clear()
+
+    def construct_df(self):
+        # construct a new data frame from the QLineEdits
+        metric = str(self.metric.text())
+        tons = str(self.tons.text())
+
+        df = pd.DataFrame({'M3': [metric],
+                           'Tons': [tons]})
+        return df
+
+    def add_df(self):
+        super().add_df(self.construct_df())
+
+    def save_csv(self):
+        super().save_csv(self.csvFilePath)
+
 
 # to test each module
 if __name__ == "__main__":
