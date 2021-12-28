@@ -56,6 +56,9 @@ class WoodService(QtWidgets.QMainWindow):
         # add stacked widgets
         self.init_stacked_widget(currentDir)
 
+        # hide the tree widget
+        self.treeWidget.hide()
+
     def init_stacked_widget(self, currentDir=""):
         self.A18 = ConvectiveM3Tons(currentDir + "forest_wood/convective_m3_tons")
         self.stackedWidget.addWidget(self.A18)
@@ -99,11 +102,13 @@ class WoodService(QtWidgets.QMainWindow):
         # If minimized
         if width == 60:
             # Expand menu
-            newWidth = 150
+            newWidth = 300
+            self.treeWidget.show()
         # If maximized
         else:
             # Restore menu
             newWidth = 60
+            self.treeWidget.hide()
 
         # Animate the transition
         self.animation.setDuration(250)
