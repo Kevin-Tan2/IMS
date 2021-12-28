@@ -110,6 +110,7 @@ class WoodService(QtWidgets.QMainWindow):
     def resizeBottom(self, event):
         delta = QPoint(event.globalPos() - self.oldPos)
         height = max(self.minimumHeight(), self.height() + delta.y())
+        self.resize(self.width(), height)
         self.oldPos = event.globalPos()
 
 
