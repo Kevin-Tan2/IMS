@@ -58,6 +58,20 @@ class WoodService(QtWidgets.QMainWindow):
 
         # hide the tree widget
         self.treeWidget.hide()
+        self.treeWidget.itemClicked.connect(self.on_item_clicked)
+
+    def on_item_clicked(self, item, column):
+        index = 0
+        if item.text(column) == "A18 Convective M3 Tons":
+            index = 0
+        elif item.text(column) == "A16 Forest Wood DO No":
+            index = 1
+        else:
+            return
+        self.display_widget(index)
+
+    def display_widget(self, index):
+        self.stackedWidget.setCurrentIndex(index)
 
     def init_stacked_widget(self, currentDir=""):
         self.A18 = ConvectiveM3Tons(currentDir + "forest_wood/convective_m3_tons")
