@@ -1,4 +1,6 @@
 import sys
+from typing import Union
+
 import icons_rc
 from PyQt5.QtCore import QPropertyAnimation, QPoint, Qt
 from PyQt5.QtWidgets import QVBoxLayout, QSizeGrip
@@ -10,6 +12,7 @@ WINDOW_SIZE = 0
 
 
 class WoodService(QtWidgets.QMainWindow):
+
     def __init__(self, currentDir=None):
 
         super().__init__()
@@ -38,7 +41,15 @@ class WoodService(QtWidgets.QMainWindow):
         self.header.mouseMoveEvent = self.moveWindow
 
         # side menu event
+        self.animation = QPropertyAnimation(self.sideMenuContainer, b"minimumWidth")  # Animate minimumWidht
         self.sideMenuBtn.clicked.connect(lambda: self.slideLeftMenu())
+
+        # added QSizeGrip to make the window resizeable
+        QSizeGrip(self.sizeGripCorner)
+        self.sizeGripX.setCursor(QtCore.Qt.SizeHorCursor)
+        self.sizeGripX.mouseMoveEvent = self.resizeRight
+        self.sizeGripY.setCursor(QtCore.Qt.SizeVerCursor)
+        self.sizeGripY.mouseMoveEvent = self.resizeBottom
 
     def mousePressEvent(self, event):
         # Get the current position of the mouse
@@ -68,6 +79,7 @@ class WoodService(QtWidgets.QMainWindow):
             WINDOW_SIZE = 0  # Update value to show that the window has been set to normal size
             self.showNormal()
 
+    # Toggle side menu bar
     def slideLeftMenu(self):
         # Get current left menu width
         width = self.sideMenuContainer.width()
@@ -82,12 +94,23 @@ class WoodService(QtWidgets.QMainWindow):
             newWidth = 60
 
         # Animate the transition
-        self.animation = QPropertyAnimation(self.sideMenuContainer, b"minimumWidth")#Animate minimumWidht
         self.animation.setDuration(250)
-        self.animation.setStartValue(width)#Start value is the current menu width
-        self.animation.setEndValue(newWidth)#end value is the new menu width
+        self.animation.setStartValue(width)  # Start value is the current menu width
+        self.animation.setEndValue(newWidth)  # end value is the new menu width
         self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
         self.animation.start()
+
+    # resize window right and bottom
+    def resizeRight(self, event):
+        delta = QPoint(event.globalPos() - self.oldPos)
+        width = max(self.minimumWidth(), self.width() + delta.x())
+        self.resize(width, self.height())
+        self.oldPos = event.globalPos()
+
+    def resizeBottom(self, event):
+        delta = QPoint(event.globalPos() - self.oldPos)
+        height = max(self.minimumHeight(), self.height() + delta.y())
+        self.oldPos = event.globalPos()
 
 
 # Create main function to test the module individually
