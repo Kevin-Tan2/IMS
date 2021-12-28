@@ -33,7 +33,6 @@
       <property name="styleSheet">
        <string notr="true">QFrame{
 border-radius: 10px;
-background-color: none;
 }</string>
       </property>
       <property name="frameShape">
@@ -94,9 +93,7 @@ border-bottom-right-radius: 0px;
         <widget class="QFrame" name="frame_3">
          <property name="styleSheet">
           <string notr="true">QFrame{
-border: none;
 border-radius: 0px;
-background-color: none;
 }</string>
          </property>
          <property name="frameShape">
@@ -454,6 +451,47 @@ border-top-left-radius: 0px;
 border-bottom-left-radius: 0px;
 border-top-right-radius: 0px;
 border-bottom-right-radius: 10px;
+}
+
+
+QPushButton {
+	color: rgb(0, 0, 0);
+	border-style: outset;
+	padding: 0px;
+	border-width: 1px;
+	border-radius: 0px;
+	border-color: rgb(122, 122, 122);
+	background-color: rgb(245, 245, 245);
+}
+QPushButton:hover{
+	background-color: rgb(180, 255, 255);
+	border-color: rgb(85, 0, 255);
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+
+QLineEdit {
+    border: 1px solid gray;
+	background-color: white;
+}
+
+QTableView{
+	border: 1px solid gray;
+}
+QTableView::item {
+	border: 1px dashed gray; 
+	padding: 5px;
+}
+
+QHeaderView::section {
+    background-color: rgb(236, 236, 236);
+    color: black;
+    padding-left: 4px;
+    border: 1px solid gray;
 }</string>
             </property>
             <property name="frameShape">
@@ -489,7 +527,11 @@ border-bottom-right-radius: 10px;
               </widget>
              </item>
              <item row="0" column="0">
-              <widget class="QStackedWidget" name="stackedWidget"/>
+              <widget class="QStackedWidget" name="stackedWidget">
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+              </widget>
              </item>
              <item row="0" column="1">
               <widget class="QFrame" name="sizeGripX">
