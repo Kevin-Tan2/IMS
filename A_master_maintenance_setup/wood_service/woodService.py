@@ -6,6 +6,7 @@ from PyQt5.QtCore import QPropertyAnimation, QPoint, Qt
 from PyQt5.QtWidgets import QVBoxLayout, QSizeGrip
 from PyQt5.uic import loadUi
 from PyQt5 import QtCore, QtWidgets
+from forest_wood.convective_m3_tons.convectiveM3Tons import ConvectiveM3Tons
 
 # Global value for the windows status
 WINDOW_SIZE = 0
@@ -50,6 +51,13 @@ class WoodService(QtWidgets.QMainWindow):
         self.sizeGripX.mouseMoveEvent = self.resizeRight
         self.sizeGripY.setCursor(QtCore.Qt.SizeVerCursor)
         self.sizeGripY.mouseMoveEvent = self.resizeBottom
+
+        # add stacked widgets
+        self.init_stacked_widget(currentDir)
+
+    def init_stacked_widget(self, currentDir=""):
+        self.A18 = ConvectiveM3Tons(currentDir + "forest_wood/convective_m3_tons")
+        self.stackedWidget.addWidget(self.A18)
 
     def mousePressEvent(self, event):
         # Get the current position of the mouse
