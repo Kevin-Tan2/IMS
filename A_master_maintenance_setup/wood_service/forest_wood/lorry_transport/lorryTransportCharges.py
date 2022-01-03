@@ -21,6 +21,12 @@ class LorryTransportCharges(MasterMaintenance):
 
         super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
 
+    def reset_entries(self):
+        # clear out the entries
+        self.customerID.clear()
+        self.lorryNo.clear()
+        self.price.clear()
+
 
 # to test each module
 if __name__ == "__main__":
