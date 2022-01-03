@@ -8,6 +8,8 @@ from PyQt5.uic import loadUi
 from PyQt5 import QtCore, QtWidgets
 from A_master_maintenance_setup.wood_service.forest_wood.convective_m3_tons.convectiveM3Tons import ConvectiveM3Tons
 from A_master_maintenance_setup.wood_service.forest_wood.fw_serial_no.fwSerialNo import FWSerialNo
+from A_master_maintenance_setup.wood_service.forest_wood.invoice_no.invoiceNo import InvoiceNo
+from A_master_maintenance_setup.wood_service.forest_wood.lorry_transport.lorryTransportCharges import LorryTransportCharges
 
 # Global value for the windows status
 WINDOW_SIZE = 0
@@ -62,22 +64,32 @@ class WoodService(QtWidgets.QMainWindow):
 
     def on_item_clicked(self, item, column):
         index = 0
-        if item.text(column) == "A18 Convective M3 Tons":
+        if item.text(column) == "A15 Invoice No":
             index = 0
         elif item.text(column) == "A16 Forest Wood DO No":
             index = 1
+        elif item.text(column) == "A17 Lorry Transport":
+            index = 2
+        elif item.text(column) == "A18 Convective M3 Tons":
+            index = 3
         else:
             return
         self.display_widget(index)
 
     def display_widget(self, index):
+        # display widgets according to the selected tree widget item
         self.stackedWidget.setCurrentIndex(index)
 
     def init_stacked_widget(self, currentDir=""):
+        self.A15 = InvoiceNo(currentDir + "forest_wood/invoice_no")
+        self.stackedWidget.addWidget(self.A15)
+        self.A16 = FWSerialNo(currentDir + "forest_wood/fw_serial_no")
+        self.stackedWidget.addWidget(self.A16)
+        self.A17 = LorryTransportCharges(currentDir + "forest_wood/lorry_transport")
+        self.stackedWidget.addWidget(self.A17)
         self.A18 = ConvectiveM3Tons(currentDir + "forest_wood/convective_m3_tons")
         self.stackedWidget.addWidget(self.A18)
-        self.A19 = FWSerialNo(currentDir + "forest_wood/fw_serial_no")
-        self.stackedWidget.addWidget(self.A19)
+
         self.stackedWidget.setCurrentIndex(1)
 
     def mousePressEvent(self, event):

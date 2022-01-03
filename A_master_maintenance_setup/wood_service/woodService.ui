@@ -90,9 +90,9 @@ border-bottom-right-radius: 0px;
          <widget class="QTreeWidget" name="treeWidget">
           <property name="geometry">
            <rect>
-            <x>0</x>
+            <x>20</x>
             <y>80</y>
-            <width>461</width>
+            <width>261</width>
             <height>581</height>
            </rect>
           </property>
@@ -119,11 +119,13 @@ QHeaderView::section {
           </property>
           <column>
            <property name="text">
-            <string> </string>
+            <string>Wood Service</string>
            </property>
            <property name="font">
             <font>
              <pointsize>16</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
           </column>
@@ -131,9 +133,24 @@ QHeaderView::section {
            <property name="text">
             <string>Forest Wood</string>
            </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <item>
+            <property name="text">
+             <string>A15 Invoice No</string>
+            </property>
+           </item>
            <item>
             <property name="text">
              <string>A16 Forest Wood DO No</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>A17 Lorry Transport</string>
             </property>
            </item>
            <item>
@@ -145,6 +162,13 @@ QHeaderView::section {
           <item>
            <property name="text">
             <string>Rubber Wood</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
            </property>
            <item>
             <property name="text">
@@ -559,6 +583,7 @@ QLineEdit {
 
 QTableView{
 	border: 1px solid gray;
+	border-radius: 10px;
 }
 QTableView::item {
 	border: 1px dashed gray; 
@@ -569,7 +594,7 @@ QHeaderView::section {
     background-color: rgb(236, 236, 236);
     color: black;
     padding-left: 4px;
-    border: 1px solid gray;
+    border: none;
 }</string>
             </property>
             <property name="frameShape">
@@ -636,7 +661,12 @@ QHeaderView::section {
              <item row="0" column="0">
               <widget class="QStackedWidget" name="stackedWidget">
                <property name="styleSheet">
-                <string notr="true">border-radius: 0px;</string>
+                <string notr="true">QWidget{
+	border-radius: 0px;
+}
+QTableView{
+	border-radius: 10px;
+}</string>
                </property>
               </widget>
              </item>
