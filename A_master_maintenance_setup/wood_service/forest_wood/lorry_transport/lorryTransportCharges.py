@@ -2,7 +2,6 @@ import sys
 from PyQt5 import QtWidgets
 import pandas as pd
 from masterMaintenance import MasterMaintenance
-from tableViewModel import tableModel, load_csv
 
 
 class LorryTransportCharges(MasterMaintenance):
