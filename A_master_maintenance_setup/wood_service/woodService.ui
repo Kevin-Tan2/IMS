@@ -183,6 +183,16 @@ QHeaderView::section {
              <string>A20 KD Handling Charges Master Data Entry</string>
             </property>
            </item>
+           <item>
+            <property name="text">
+             <string>A21 Rubber Wood DO No</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>A22 Container Loading Charges Master Data Entry</string>
+            </property>
+           </item>
           </item>
          </widget>
         </widget>

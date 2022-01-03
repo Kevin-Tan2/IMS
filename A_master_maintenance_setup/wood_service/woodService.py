@@ -9,7 +9,13 @@ from PyQt5 import QtCore, QtWidgets
 from A_master_maintenance_setup.wood_service.forest_wood.convective_m3_tons.convectiveM3Tons import ConvectiveM3Tons
 from A_master_maintenance_setup.wood_service.forest_wood.fw_serial_no.fwSerialNo import FWSerialNo
 from A_master_maintenance_setup.wood_service.forest_wood.invoice_no.invoiceNo import InvoiceNo
-from A_master_maintenance_setup.wood_service.forest_wood.lorry_transport.lorryTransportCharges import LorryTransportCharges
+from A_master_maintenance_setup.wood_service.forest_wood.lorry_transport.lorryTransportCharges import \
+    LorryTransportCharges
+
+from A_master_maintenance_setup.wood_service.rubber_wood.fj_kd_charge.fjKDCharge import FJKDCharge
+from A_master_maintenance_setup.wood_service.rubber_wood.kd_handling_charges.kdHandlingCharge import KDHandlingCharges
+from A_master_maintenance_setup.wood_service.rubber_wood.rw_serial_no.rwSerialNo import RWSerialNo
+from A_master_maintenance_setup.wood_service.rubber_wood.container_loading.containerLoading import ContainerLoading
 
 # Global value for the windows status
 WINDOW_SIZE = 0
@@ -72,6 +78,14 @@ class WoodService(QtWidgets.QMainWindow):
             index = 2
         elif item.text(column) == "A18 Convective M3 Tons":
             index = 3
+        elif item.text(column) == "A19 Finger joined KD Charge":
+            index = 4
+        elif item.text(column) == "A20 KD Handling Charges Master Data Entry":
+            index = 5
+        elif item.text(column) == "A21 Rubber Wood DO No":
+            index = 6
+        elif item.text(column) == "A22 Container Loading Charges Master Data Entry":
+            index = 7
         else:
             return
         self.display_widget(index)
@@ -89,6 +103,15 @@ class WoodService(QtWidgets.QMainWindow):
         self.stackedWidget.addWidget(self.A17)
         self.A18 = ConvectiveM3Tons(currentDir + "forest_wood/convective_m3_tons")
         self.stackedWidget.addWidget(self.A18)
+
+        self.A19 = FJKDCharge(currentDir + "rubber_wood/fj_kd_charge")
+        self.stackedWidget.addWidget(self.A19)
+        self.A20 = KDHandlingCharges(currentDir + "rubber_wood/kd_handling_charges")
+        self.stackedWidget.addWidget(self.A20)
+        self.A21 = RWSerialNo(currentDir + "rubber_wood/rw_serial_no")
+        self.stackedWidget.addWidget(self.A21)
+        self.A22 = ContainerLoading(currentDir + "rubber_wood/container_loading")
+        self.stackedWidget.addWidget(self.A22)
 
         self.stackedWidget.setCurrentIndex(1)
 
