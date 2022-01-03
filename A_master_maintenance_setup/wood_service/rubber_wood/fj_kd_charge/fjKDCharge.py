@@ -27,6 +27,22 @@ class FJKDCharge(MasterMaintenance):
         self.size2.clear()
         self.price.clear()
 
+    def construct_df(self):
+        # construct a new data frame from the QLineEdits
+        customerID = str(self.customerID.text())
+        size1 = str(self.size1.text())
+        size2 = str(self.size2.text())
+        price = str(self.price.text())
+
+        df = pd.DataFrame({'Customer ID': [customerID],
+                           'Size 1': [size1],
+                           'Size 2': [size2],
+                           'Price': [price]})
+        return df
+
+    def add_df(self):
+        super().add_df(self.construct_df())
+
 
 # to test each module
 if __name__ == "__main__":
