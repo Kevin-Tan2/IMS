@@ -595,10 +595,13 @@ QTableView{
 	border: 1px solid gray;
 	border-radius: 10px;
 }
+
+/*
 QTableView::item {
 	border: 1px dashed gray; 
 	padding: 5px;
 }
+*/
 
 QHeaderView::section {
     background-color: rgb(236, 236, 236);
@@ -675,7 +678,7 @@ QHeaderView::section {
 	border-radius: 0px;
 }
 QTableView{
-	border-radius: 10px;
+	border-radius: 5px;
 }</string>
                </property>
               </widget>
