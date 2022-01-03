@@ -27,6 +27,28 @@ class LorryTransportCharges(MasterMaintenance):
         self.lorryNo.clear()
         self.price.clear()
 
+    def construct_df(self):
+        # construct a new data frame from the QLineEdits
+        customerID = str(self.customerID.text())
+        lorryNo = str(self.lorryNo.text())
+        price = str(self.price.text())
+        woodType = None
+
+        if self.tonnageBtn.isChecked():
+            woodType = str(self.tonnageBtn.text())
+
+        elif self.tripBtn.isChecked():
+            woodType = str(self.tripBtn.text())
+
+        df = pd.DataFrame({'Customer ID': [customerID],
+                           'Lorry No': [lorryNo],
+                           'Price': [price],
+                           'Type': [woodType]})
+        return df
+
+    def add_df(self):
+        super().add_df(self.construct_df())
+
 
 # to test each module
 if __name__ == "__main__":
