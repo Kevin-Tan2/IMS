@@ -25,6 +25,27 @@ class KDHandlingCharges(MasterMaintenance):
         self.customerID.clear()
         self.handlingCharges.clear()
 
+    def construct_df(self):
+        # construct a new data frame from the QLineEdits
+        customerID = str(self.customerID.text())
+        handlingCharges = str(self.handlingCharges.text())
+
+        handlingType = None
+
+        if self.tonBtn.isChecked():
+            handlingType = str(self.tonBtn.text())
+
+        elif self.tripBtn.isChecked():
+            handlingType = str(self.tripBtn.text())
+
+        df = pd.DataFrame({'Customer ID': [customerID],
+                           'Handling Charges': [handlingCharges],
+                           'Type': [handlingType]})
+        return df
+
+    def add_df(self):
+        super().add_df(self.construct_df())
+
 
 # to test each module
 if __name__ == "__main__":
