@@ -20,6 +20,11 @@ class FreightCharges(MasterMaintenance):
 
         super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
 
+    def reset_entries(self):
+        # clear out the entries
+        self.dischargePort.clear()
+        self.containerCharge.clear()
+
 
 # to test each module
 if __name__ == "__main__":
