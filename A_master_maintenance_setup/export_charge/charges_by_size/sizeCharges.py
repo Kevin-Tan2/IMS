@@ -27,6 +27,22 @@ class SizeCharge(MasterMaintenance):
         self.sizeTwo.clear()
         self.price.clear()
 
+    def construct_df(self):
+        # construct a new data frame from the QLineEdits
+        customerID = str(self.customerID.text())
+        sizeOne = str(self.sizeOne.text())
+        sizeTwo = str(self.sizeTwo.text())
+        price = str(self.price.text())
+
+        df = pd.DataFrame({'Customer ID': [customerID],
+                           'Size 1': [sizeOne],
+                           'Size 2': [sizeTwo],
+                           'Price': [price]})
+        return df
+
+    def add_df(self):
+        super().add_df(self.construct_df())
+
 
 # to test each module
 if __name__ == "__main__":
