@@ -59,6 +59,23 @@ class ExportCharge(QtWidgets.QMainWindow):
 
         # hide the tree widget
         self.treeWidget.hide()
+        self.treeWidget.itemClicked.connect(self.on_item_clicked)
+
+    def on_item_clicked(self, item, column):
+        index = 0
+        if item.text(column) == "A23 Freight Charges":
+            index = 0
+        elif item.text(column) == "A24 Charges By Size":
+            index = 1
+        elif item.text(column) == "A25 Export Invoice No":
+            index = 2
+        else:
+            return
+        self.display_widget(index)
+
+    def display_widget(self, index):
+        # display widgets according to the selected tree widget item
+        self.stackedWidget.setCurrentIndex(index)
 
     def init_stacked_widget(self, currentDir=""):
         self.A23 = FreightCharges(currentDir + "freight_charges")
