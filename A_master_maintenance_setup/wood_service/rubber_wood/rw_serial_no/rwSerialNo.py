@@ -16,7 +16,7 @@ class RWSerialNo(InvoiceWidget):
         self.csvFilePath = currentDir + "rwSerialNo.csv"
 
         # create headers for .csv use
-        self.columnNames = ['SerialNo']
+        self.columnNames = ['Invoice No']
 
         super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
 
