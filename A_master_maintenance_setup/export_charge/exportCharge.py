@@ -54,8 +54,21 @@ class ExportCharge(QtWidgets.QMainWindow):
         self.sizeGripY.setCursor(QtCore.Qt.SizeVerCursor)
         self.sizeGripY.mouseMoveEvent = self.resizeBottom
 
+        # add stacked widgets
+        self.init_stacked_widget(currentDir)
+
         # hide the tree widget
         self.treeWidget.hide()
+
+    def init_stacked_widget(self, currentDir=""):
+        self.A23 = FreightCharges(currentDir + "freight_charges")
+        self.stackedWidget.addWidget(self.A23)
+        self.A24 = SizeCharge(currentDir + "charges_by_size")
+        self.stackedWidget.addWidget(self.A24)
+        self.A25 = ExportInvoice(currentDir + "export_no")
+        self.stackedWidget.addWidget(self.A25)
+
+        self.stackedWidget.setCurrentIndex(0)
 
     def mousePressEvent(self, event):
         # Get the current position of the mouse
