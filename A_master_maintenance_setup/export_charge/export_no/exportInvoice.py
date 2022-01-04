@@ -20,6 +20,10 @@ class ExportInvoice(InvoiceWidget):
 
         super().__init__(self.uiFilePath, self.csvFilePath, self.columnNames)
 
+    def construct_df(self):
+        df = pd.DataFrame({'Invoice No': [str(self.inputNo.text())]})
+        return df
+
 
 # to test each module
 if __name__ == "__main__":
