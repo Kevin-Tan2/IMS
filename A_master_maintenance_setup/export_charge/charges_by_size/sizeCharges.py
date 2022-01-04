@@ -43,6 +43,9 @@ class SizeCharge(MasterMaintenance):
     def add_df(self):
         super().add_df(self.construct_df())
 
+    def save_csv(self):
+        super().save_csv(self.csvFilePath)
+
 
 # to test each module
 if __name__ == "__main__":
