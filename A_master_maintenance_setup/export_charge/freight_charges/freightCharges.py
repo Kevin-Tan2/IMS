@@ -25,6 +25,18 @@ class FreightCharges(MasterMaintenance):
         self.dischargePort.clear()
         self.containerCharge.clear()
 
+    def construct_df(self):
+        # construct a new data frame from the QLineEdits
+        dischargePort = str(self.dischargePort.text())
+        containerCharge = str(self.containerCharge.text())
+
+        df = pd.DataFrame({'Port of Discharge': [dischargePort],
+                           'Freight Charges': [containerCharge]})
+        return df
+
+    def add_df(self):
+        super().add_df(self.construct_df())
+
 
 # to test each module
 if __name__ == "__main__":
